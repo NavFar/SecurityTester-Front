@@ -1,8 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(font.css); /*link for enable fonts*/
+
 html{
   	font-family: IRANSans !important;
 }
 body{
   margin: 0;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: #243e55;
 }
