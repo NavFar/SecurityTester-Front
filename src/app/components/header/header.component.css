@@ -1,4 +1,4 @@
-.backgroundColor{
+.background{
   background-color: #5a9bd5;
   min-height: 13vh;
   overflow: auto;
@@ -16,7 +16,7 @@
   float:left;
   height: 14vh !important;
   margin-top: -3vh;
-  margin-left: 15px;
+  margin-left: 10px;
   border-radius: 50%;
 }
 /* /////////////////////////////////////////////////////////////////////// */
