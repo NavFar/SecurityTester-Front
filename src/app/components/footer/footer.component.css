@@ -1,0 +1,36 @@
+.background{
+  background-color: #5a9bd5;
+  min-height: 6vh;
+  overflow: auto;
+  padding-top: 3vh;
+  position: fixed;
+  width:100% !important;
+  bottom: 0;
+
+}
+.footer{
+  color:white;
+  font-weight: bold;
+}
+.footNote{
+  float: left !important;
+  margin-left: 15px;
+}
+.copyRight{
+  float: right !important;
+  margin-right: 15px;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 780px) {
+.footer{
+  font-size: 15px;
+}
+
+}
+@media only screen and (min-width: 781px) {
+
+  .footer{
+    font-size: 25px;
+  }
+
+}
