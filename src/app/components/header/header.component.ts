@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title :string;
+  links:any[];
   constructor() {
-    this.title = "عنوان سایت"
+    this.title = "عنوان سایت";
+    this.links=[
+      {name:"صفحه نخست",link:"home"},
+      {name:"سوالات رایج",link:"#"},
+      {name:"امارارزیابی‌ها",link:"#"},
+      {name:"درباره ما",link:"#"},
+      {name:"تماس و پشتیبانی",link:"#"},
+
+    ];
    }
 
   ngOnInit() {

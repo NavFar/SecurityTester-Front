@@ -6,4 +6,9 @@
   <div class="language">
     EN
     </div>
+  <div class="linksContainer">
+    <a class="links" *ngFor="let link of links" [routerLink]="link.link" [routerLinkActive]="['activeLink']">
+      {{link.name}}
+    </a>
+  </div>
 </div>

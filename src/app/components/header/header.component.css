@@ -30,6 +30,34 @@
   border-bottom: none;
   border-left:none;
 }
+.linksContainer{
+  position: absolute;
+  bottom: 0;
+  right: 1px;
+  direction: rtl;
+  width:100%;
+}
+.links{
+  color:#5a9bd5;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 2px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-right: 1px;
+  margin-bottom: 2px;
+  background-color: white;
+  padding: 1vh 2% 0.75vh 2%;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.links:visited{
+  color:#5a9bd5;
+}
+.activeLink{
+  background-color: #bfc0c1;
+}
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
 
