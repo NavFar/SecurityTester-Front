@@ -12,3 +12,42 @@
 .introduction{
   min-height: 24vh;
 }
+.basicContainer{
+  margin: 3vh auto;
+}
+input[type="text"]{
+  width:99%;
+  height: 6vh;
+  border:2px solid #efeef3;
+  text-align: center;
+  font-size: 3vh;
+}
+.checkBoxContainer{
+  /* direction: rtl; */
+  height:3vh;
+}
+.exposeContainer{
+  margin-left: 2%;
+  border:2px solid #efeef3;
+  direction: rtl;
+  display: inline-block;
+  width:56%;
+}
+.notBotContainer{
+  margin-left: 2%;
+  border:2px solid #efeef3;
+  direction: rtl;
+  display: inline-block;
+  width:36%;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 780px) {
+.basicContainer{
+  width:100%;
+}
+}
+@media only screen and (min-width: 781px) {
+.basicContainer{
+  width:80%;
+  }
+}

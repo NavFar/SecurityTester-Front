@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
   moto:string;
   introduction:string;
+  ipInputPlaceHolder:string;
+  exposeText:string;
+  notBotText:string;
   constructor() {
     this.moto="شعار سایت";
-    this.introduction="متن معرفی"
+    this.introduction="متن معرفی";
+    this.ipInputPlaceHolder="نام دامنه یا ای‌پی "
+    this.exposeText="نتایج این ارزیابی برای عموم قابل مشاهده نباشد.";
+    this.notBotText="من بات نیستم.";
    }
 
   ngOnInit() {
