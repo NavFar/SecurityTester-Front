@@ -1,3 +1,8 @@
+.container{
+  height: 100%;
+  position: relative;
+  padding-bottom: 9vh;
+}
 .center{
   margin-top: 1vh;
   margin-bottom: 1vh;
