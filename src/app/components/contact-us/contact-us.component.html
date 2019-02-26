@@ -1,3 +1,13 @@
-<p>
-  contact-us works!
-</p>
+<div class="dualBoxContainer">
+  <div class="dualBox">
+    <div *ngFor="let field of contactUsFields">
+      <input *ngIf="field.type==='text'" [type]="field.type" [placeholder]="field.placeholder"/>
+      <textarea rows="4" *ngIf="field.type==='textarea'" [placeholder]="field.placeholder"></textarea>
+  </div>
+  </div>
+  <div class="dualBox">
+    <div class="contactUs">
+      {{contactUsText}}
+      </div>
+  </div>
+</div>

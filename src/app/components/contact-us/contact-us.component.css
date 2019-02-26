@@ -1,0 +1,46 @@
+.dualBoxContainer{
+  width:100%;
+  direction:rtl;
+}
+.dualBox{
+  height: 100%;
+  min-height: 10vh;
+  margin: 2px 2px 2px 2px;
+}
+input[type="text"] , textarea{
+  margin-top: 1vh;
+  padding: 3px 7px 3px 7px;
+  direction: rtl;
+  width: 93%;
+  border: 2px solid #eeeef0;
+  font-size: 1.5em;
+  resize: none;
+  font-family: IRANSans !important;
+}
+.contactUs{
+  margin-top: 1vh;
+  width: 95%;
+  border: 2px solid #4c6f8d;
+  text-align: center;
+  vertical-align: middle;
+  min-height: 10vh;
+
+}
+/* /////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 780px) {
+.dualBoxContainer{
+  flex-direction: row;
+
+}
+.dualBox{
+  width: 96%;
+}
+}
+@media only screen and (min-width: 781px) {
+  .dualBoxContainer{
+    display: flex;
+  }
+  .dualBox{
+    width: 48%;
+  }
+}
