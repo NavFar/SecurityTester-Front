@@ -1,11 +1,13 @@
 .background{
   background-color: #5a9bd5;
   min-height: 13vh;
-  overflow: auto;
+  overflow:  visible;
   padding-top: 5vh;
   position: relative;
 }
 .title{
+  position: relative;
+  top:-4vh;
   text-align: center;
   font-weight: bold;
   color: white;
@@ -19,6 +21,7 @@
   margin-top: -3.5vh;
   margin-left: 10px;
   border-radius: 50%;
+  width: 14vh;
 }
 .language{
   color: white;
@@ -33,6 +36,7 @@
 .linksContainer{
   position: absolute;
   bottom: 0;
+  /* overflow: auto; */
   right: 1px;
   direction: rtl;
   width:100%;
@@ -49,7 +53,6 @@
   margin-bottom: 2px;
   background-color: white;
   padding: 1vh 2% 0.75vh 2%;
-  font-size: 1.1em;
   font-weight: bold;
 }
 .links:visited{
@@ -58,24 +61,54 @@
 .activeLink{
   background-color: #bfc0c1;
 }
+input{
+  display: none;
+}
+span{
+margin-right: 15px;
+display: block;
+width: 30px;
+height: 10px;
+border-top: 2px solid #eee;
+}
+.linksAcardion{
+  overflow-y: auto;
+  transition: all 0.1s ease-in;
+}
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
-
+  .linksAcardion{
+    position: absolute;
+    top: 5vh;
+  }
   .title{
     font-size: 27px;
   }
-  .logo{
-    width:80px !important;
+
+  .linksAcardion{
+      height: 0;
+      width:99vw;
+    }
+  #nav-check:checked ~ .linksAcardion{
+    height: calc(100vh);
+    overflow-y: auto;
+  }
+  .links{
+    display: block;
+    background-color: #dee0e2;
+    border-radius: 0;
+    margin: 0;
   }
 }
 @media only screen and (min-width: 781px) {
-
+  span{
+  display: none;
+  }
   .title{
     font-size: 45px;
   }
+  .links{
 
-  .logo{
-    width:160px !important;
   }
 
 }
