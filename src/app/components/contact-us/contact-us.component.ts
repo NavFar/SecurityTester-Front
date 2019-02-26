@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ContactUsComponent implements OnInit {
   contactUsFields:any[];
   contactUsText:string;
+  notBotText:string;
+  send:string;
+  mapPosition:string;
   constructor() {
     this.contactUsText="متن ارتباط با ما"
+    this.notBotText="من بات نیستم.";
+    this.mapPosition="موقعیت رو نقشه"
+    this.send="ارسال"
     this.contactUsFields=[
       {name:"name",placeholder:"نام و نام خانوادگی",type:"text"},
       {name:"email",placeholder:"ایمیل",type:"text"},

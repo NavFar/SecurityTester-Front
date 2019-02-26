@@ -26,6 +26,40 @@ input[type="text"] , textarea{
   min-height: 10vh;
 
 }
+input[type="checkbox"]{
+  width: 15px;
+  height: 15px;
+}
+.checkBoxContainer{
+  height:4vh;
+  font-size: 1.5vh;
+}
+.notBotContainer{
+  border:2px solid #efeef3;
+  direction: rtl;
+  display: inline-block;
+  width:45%;
+  margin-top: 15px;
+  margin-left: 27%;
+  margin-right: 27%;
+  height: 100%;
+  float:right;
+  padding-top: 1vh;
+}
+.buttonContainer{
+  width: 100%;
+}
+button{
+
+  background-color: #70ac48;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  height: 5vh;
+  font-weight: bolder;
+  font-size: 1.5em;
+  margin:4vh auto;
+}
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
 .dualBoxContainer{
@@ -35,6 +69,11 @@ input[type="text"] , textarea{
 .dualBox{
   width: 96%;
 }
+button{
+  width:45%;
+  margin-left:27%;
+  margin-right:27%;
+}
 }
 @media only screen and (min-width: 781px) {
   .dualBoxContainer{
@@ -42,5 +81,10 @@ input[type="text"] , textarea{
   }
   .dualBox{
     width: 48%;
+  }
+  button{
+    width:30%;
+    margin-left:35%;
+    margin-right:35%;
   }
 }
