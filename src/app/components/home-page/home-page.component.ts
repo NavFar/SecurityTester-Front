@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
     this.moto="شعار سایت";
     this.introduction="متن معرفی";
     this.ipInputPlaceHolder="نام دامنه یا ای‌پی "
+    this.test="ارزیابی";
     this.exposeText="نتایج این ارزیابی برای عموم قابل مشاهده نباشد.";
     this.notBotText="من بات نیستم.";
    }

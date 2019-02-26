@@ -22,32 +22,60 @@ input[type="text"]{
   text-align: center;
   font-size: 3vh;
 }
+input[type="checkbox"]{
+}
 .checkBoxContainer{
-  /* direction: rtl; */
-  height:3vh;
+  height:4vh;
+  font-size: 1.5vh;
 }
 .exposeContainer{
-  margin-left: 2%;
   border:2px solid #efeef3;
   direction: rtl;
   display: inline-block;
-  width:56%;
+  width:62%;
+  height: 100%;
+  float:left;
+  padding-top: 1vh;
 }
 .notBotContainer{
-  margin-left: 2%;
   border:2px solid #efeef3;
   direction: rtl;
   display: inline-block;
-  width:36%;
+  width:33%;
+  height: 100%;
+  float:right;
+  padding-top: 1vh;
+}
+button{
+
+  background-color: #70ac48;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  height: 5vh;
+  font-weight: bolder;
+  font-size: 1.5em;
+  margin:4vh auto;
+}
+.buttonContainer{
+  width: 100%;
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
 .basicContainer{
   width:100%;
 }
+button{
+  width:45%;
+  margin-left:27%;
+}
 }
 @media only screen and (min-width: 781px) {
 .basicContainer{
   width:80%;
+  }
+  button{
+    width:30%;
+    margin-left:35%;
   }
 }
