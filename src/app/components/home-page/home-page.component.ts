@@ -11,6 +11,7 @@ export class HomePageComponent implements OnInit {
   ipInputPlaceHolder:string;
   exposeText:string;
   notBotText:string;
+  test:string;
   constructor() {
     this.moto="شعار سایت";
     this.introduction="متن معرفی";
