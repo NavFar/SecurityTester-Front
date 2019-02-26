@@ -22,8 +22,3 @@ body{
   color: #2e80a8;
 
 }
-input[type="checkbox"]{
-  width:100%;
-  background-color: red;
-  height: 6vh;
-}
