@@ -22,29 +22,32 @@ input[type="text"]{
   text-align: center;
   font-size: 3vh;
 }
+
 input[type="checkbox"]{
 }
 .checkBoxContainer{
-  height:4vh;
+  direction: rtl;
+  /* height:4vh; */
+  width: 100%;
   font-size: 1.5vh;
+  position: relative;
 }
 .exposeContainer{
   border:2px solid #efeef3;
-  direction: rtl;
   display: inline-block;
-  width:62%;
-  height: 100%;
-  float:left;
-  padding-top: 1vh;
+  direction: rtl;
+  position: absolute;
+  width:45%;
+  left: 0;
+  margin:0 auto;
+  /* font-size: 1.2em; */
+  padding-top: 2vh;
+  height: 5vh;
 }
 .notBotContainer{
-  border:2px solid #efeef3;
-  direction: rtl;
   display: inline-block;
-  width:33%;
-  height: 100%;
-  float:right;
-  padding-top: 1vh;
+  margin:0 auto;
+  width:64%;
 }
 button{
 
@@ -61,7 +64,20 @@ button{
   width: 100%;
 }
 /* /////////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 768px) {
+.exposeContainer{
+  display: block;
+  width:95%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 2vh;
+
+}
+.notBotContainer{
+  display: block;
+  margin-top: 2vh;
+  margin-left: 8%;
+}
 .basicContainer{
   width:100%;
 }
@@ -70,12 +86,30 @@ button{
   margin-left:27%;
 }
 }
-@media only screen and (min-width: 781px) {
+@media only screen and (min-width: 769px)and (max-width: 992px) {
 .basicContainer{
-  width:80%;
+  width:100%;
   }
   button{
     width:30%;
     margin-left:35%;
   }
+}
+@media only screen and (min-width: 993px)and (max-width: 1200px) {
+  .basicContainer{
+    width:100%;
+    }
+    button{
+      width:30%;
+      margin-left:35%;
+    }
+}
+@media only screen and (min-width: 1201px) {
+  .basicContainer{
+    width:90%;
+    }
+    button{
+      width:30%;
+      margin-left:35%;
+    }
 }

@@ -23,5 +23,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
   }
+  resolved($event){
+    console.log(event);
+  }
 
 }

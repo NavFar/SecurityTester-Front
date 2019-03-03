@@ -9,14 +9,11 @@
 </div>
 <div class="basicContainer  baseFontColor" >
   <div class="checkBoxContainer">
-  <div class="exposeContainer">
-    <input type="checkbox"/>
-    {{exposeText}}
-  </div>
-  <div class="notBotContainer">
-    <input type="checkbox"/>
-    {{notBotText}}
-  </div>
+    <re-captcha class="notBotContainer" (resolved)="resolved($event)" siteKey="6LdWKpUUAAAAAPXSHP8T7wd_9qomdXRamOJJ2-mE" style=";margin:0;"></re-captcha>
+    <div class="exposeContainer">
+      <input type="checkbox"/>
+       {{exposeText}}
+    </div>
 </div>
 </div>
 <div class="buttonContainer">

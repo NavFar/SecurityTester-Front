@@ -73,7 +73,7 @@ border-top: 2px solid #eee;
 }
 .linksAcardion{
   overflow-y: auto;
-  transition: all 0.1s ease-in;
+  transition: all 0.5s ease-in;
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
@@ -90,7 +90,7 @@ border-top: 2px solid #eee;
       width:99vw;
     }
   #nav-check:checked ~ .linksAcardion{
-    height: calc(100vh);
+    height: 100vh;
     overflow-y: auto;
   }
   .links{
