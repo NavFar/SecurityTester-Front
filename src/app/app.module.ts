@@ -10,6 +10,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.compo
     ContactUsComponent,
     LoginComponent,
     SideBreadcrumbComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
