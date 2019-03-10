@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaModule ,RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +22,11 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     RecaptchaModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: RECAPTCHA_LANGUAGE,
+      useValue: 'fa',},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
