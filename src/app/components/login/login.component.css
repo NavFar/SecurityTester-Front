@@ -1,0 +1,35 @@
+input[type="text"], input[type="password"]{
+  width: 99%;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  /* display: block; */
+  text-align: center;
+  font-size: 2em;
+  padding: 1vh 0 1vh 0;
+  color: #698ec2;
+}
+::placeholder{
+  color: #698ec2;
+}
+button
+{
+  background: #73ab46;
+  border:none;
+  border-radius: 15px;
+  color: white;
+  font-size:2em;
+  min-width:20%;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 2vh;
+}
+.centric{
+display: table;
+margin : 0 auto;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 768px) {
+
+}

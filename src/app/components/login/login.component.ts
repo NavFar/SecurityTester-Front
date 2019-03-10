@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  username:string;
+  password:string;
+  login:string;
+  constructor() {
+    this.username="نام کاربری";
+    this.password="گذرواژه";
+    this.login="ورود";
+   }
 
   ngOnInit() {
   }
