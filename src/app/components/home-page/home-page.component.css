@@ -26,6 +26,9 @@ input[type="text"]{
 input[type="checkbox"]{
 }
 .checkBoxContainer{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
   direction: rtl;
   /* height:4vh; */
   width: 100%;
@@ -38,6 +41,7 @@ input[type="checkbox"]{
   direction: rtl;
   position: absolute;
   width:45%;
+  text-align: center;
   left: 0;
   margin:0 auto;
   /* font-size: 1.2em; */
@@ -47,7 +51,7 @@ input[type="checkbox"]{
 .notBotContainer{
   display: inline-block;
   margin:0 auto;
-  width:64%;
+
 }
 button{
 
@@ -66,17 +70,18 @@ button{
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 768px) {
 .exposeContainer{
-  display: block;
-  width:95%;
+  display: table;
+  width: auto;
   margin: 0 auto;
   position: relative;
   margin-top: 2vh;
 
 }
 .notBotContainer{
-  display: block;
+  display: table;
   margin-top: 2vh;
-  margin-left: 8%;
+  margin-left: auto!important;
+  margin-right: auto;
 }
 .basicContainer{
   width:100%;
@@ -84,6 +89,7 @@ button{
 button{
   width:45%;
   margin-left:27%;
+  padding-bottom: 6vh;
 }
 }
 @media only screen and (min-width: 769px)and (max-width: 992px) {
