@@ -11,6 +11,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { LoginComponent } from './components/login/login.component';
 import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminBaseComponent } from './components/admin-base/admin-base.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     SideBreadcrumbComponent,
     DashboardComponent,
+    AdminBaseComponent,
   ],
   imports: [
     BrowserModule,
