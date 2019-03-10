@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(font.css); /*link for enable fonts*/
 
-html{
+*{
   	font-family: IRANSans !important;
 }
+
 body{
   margin: 0;
 }
