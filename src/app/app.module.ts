@@ -16,6 +16,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { FirstPageDashboardComponent } from './components/first-page-dashboard/first-page-dashboard.component';
 import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
 import { UploaderComponent } from './components/uploader/uploader.component';
+import { ReportsOptionsComponent } from './components/reports-options/reports-options.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UploaderComponent } from './components/uploader/uploader.component';
     FirstPageDashboardComponent,
     SiteOptionsDashboardComponent,
     UploaderComponent,
+    ReportsOptionsComponent,
   ],
   imports: [
     BrowserModule,
