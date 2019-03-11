@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="links" *ngFor="let link of links" [routerLink]="['/admin',{ outlets: { adminRouter: [link.link]} }]" [routerLinkActive]="['activeLink']">
+    <a class="links" *ngFor="let link of links" [routerLink]="['/admin',{ outlets: { adminRouter: [link.link]} }]" [queryParams]="{ page: 99 }" [routerLinkActive]="['activeLink']">
     {{link.name}}
     </a>
 </div>

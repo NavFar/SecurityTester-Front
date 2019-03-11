@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-first-page-dashboard',
+  templateUrl: './first-page-dashboard.component.html',
+  styleUrls: ['./first-page-dashboard.component.css']
+})
+export class FirstPageDashboardComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

@@ -13,6 +13,7 @@ import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.compo
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { FirstPageDashboardComponent } from './components/first-page-dashboard/first-page-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     DashboardComponent,
     AdminBaseComponent,
     SideNavComponent,
+    FirstPageDashboardComponent,
   ],
   imports: [
     BrowserModule,
