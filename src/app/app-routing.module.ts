@@ -5,6 +5,7 @@ import {ContactUsComponent} from './components/contact-us/contact-us.component';
 import {LoginComponent} from './components/login/login.component';
 import {AdminBaseComponent} from './components/admin-base/admin-base.component';
 import {FirstPageDashboardComponent} from './components/first-page-dashboard/first-page-dashboard.component';
+import {SiteOptionsDashboardComponent} from './components/site-options-dashboard/site-options-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminBaseComponent,children:[
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     { path: 'firstPageDashboard', component: FirstPageDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
+
   ] },
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
