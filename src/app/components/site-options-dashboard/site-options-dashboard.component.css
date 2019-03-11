@@ -1,0 +1,14 @@
+.container{
+  width: 100%!important;
+  direction: rtl;
+}
+button{
+  min-width: 20%;
+  display: block;
+  margin:2vh 15px 2vh 15px;
+  background-color: white;
+  padding: 5px 2px 5px 2px;
+  border: 2px solid #b6bfce;
+  font-weight: bolder;
+  font-size:1.1em;
+}
