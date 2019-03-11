@@ -1,0 +1,26 @@
+.userSpace{
+  width: 96%;
+  height: 3vh;
+  border:2px solid #5f6871;
+}
+.sideNav{
+  direction: rtl;
+  display: inline-block;
+  width: 17%;
+  height: 68vh;
+  border:2px solid #727888;
+  border-top: none;
+
+}
+.adminPages{
+  vertical-align: top;
+  width: 79%;
+  display: inline-block;
+  height: 68vh;
+  border:2px solid #cecece;
+  border-right: none;
+  border-top: none;
+
+}
+.adminContainer{
+}
