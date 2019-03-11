@@ -4,7 +4,7 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {ContactUsComponent} from './components/contact-us/contact-us.component';
 import {LoginComponent} from './components/login/login.component';
 import {AdminBaseComponent} from './components/admin-base/admin-base.component';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {FirstPageDashboardComponent} from './components/first-page-dashboard/first-page-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'admin', component: AdminBaseComponent,children:[
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    { path: 'dashboard', component: DashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'firstPageDashboard', component: FirstPageDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
   ] },
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   { path: '**', redirectTo: 'home', pathMatch: 'full' },

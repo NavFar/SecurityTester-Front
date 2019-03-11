@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { FirstPageDashboardComponent } from './components/first-page-dashboard/first-page-dashboard.component';
+import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FirstPageDashboardComponent } from './components/first-page-dashboard/f
     AdminBaseComponent,
     SideNavComponent,
     FirstPageDashboardComponent,
+    SiteOptionsDashboardComponent,
   ],
   imports: [
     BrowserModule,
