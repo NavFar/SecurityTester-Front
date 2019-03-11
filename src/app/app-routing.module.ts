@@ -6,6 +6,7 @@ import {LoginComponent} from './components/login/login.component';
 import {AdminBaseComponent} from './components/admin-base/admin-base.component';
 import {FirstPageDashboardComponent} from './components/first-page-dashboard/first-page-dashboard.component';
 import {SiteOptionsDashboardComponent} from './components/site-options-dashboard/site-options-dashboard.component';
+import { UploaderComponent } from './components/uploader/uploader.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     { path: 'firstPageDashboard', component: FirstPageDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'uploader', component: UploaderComponent, pathMatch: 'full', outlet:'adminRouter' },
 
   ] },
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
