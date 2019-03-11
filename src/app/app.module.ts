@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AdminBaseComponent } from './components/admin-base/admin-base.component
     SideBreadcrumbComponent,
     DashboardComponent,
     AdminBaseComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
