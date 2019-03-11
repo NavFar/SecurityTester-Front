@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsOptionsComponent implements OnInit {
 
-  constructor() { }
+  links:any[];
+  constructor() {
+    this.links=[
+      {link:'',name:'ویرایش صفحه گزارش'},
+      {link:'',name:'مشاهده ارزیابی های انجام شده'},
+    ];
+   }
 
   ngOnInit() {
   }
