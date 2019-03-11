@@ -1,3 +1,5 @@
-<p>
-  side-nav works!
-</p>
+<div class="container">
+    <a class="links" *ngFor="let link of links" [routerLink]="['/admin',{ outlets: { adminRouter: [link.link]} }]" [routerLinkActive]="['activeLink']">
+    {{link.name}}
+    </a>
+</div>

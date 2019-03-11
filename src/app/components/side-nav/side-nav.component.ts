@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
-
+  links:any[];
+  constructor() {
+    this.links=[
+      {link:'dashboard',name:'صفحه نخست'},
+      {link:'',name:'صفحه گزارش ارزیابی'},
+      {link:'',name:'آپلودر'},
+      {link:'',name:'تنظیمات سایت'},
+    ];
+   }
   ngOnInit() {
   }
 

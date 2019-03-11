@@ -1,0 +1,23 @@
+.container{
+  width: 100%!important;
+  height: 100%;
+}
+.links{
+  color:black;
+  display: block;
+  padding: 3px 0 3px 0;
+  font-size: 1.2em;
+  border-bottom:2px solid #cfcfd1;
+  min-width: 100%!important;
+  text-align: center;
+  text-decoration: none;
+}
+.links:hover{
+  background-color: #a4abb5;
+}
+a:visited{
+  color:black;
+}
+.activeLink{
+  background-color: #9cc2e6;
+}
