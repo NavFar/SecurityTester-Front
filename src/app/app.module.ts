@@ -17,6 +17,7 @@ import { FirstPageDashboardComponent } from './components/first-page-dashboard/f
 import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { ReportsOptionsComponent } from './components/reports-options/reports-options.component';
+import { TitleEditComponent } from './title-edit/title-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ReportsOptionsComponent } from './components/reports-options/reports-op
     SiteOptionsDashboardComponent,
     UploaderComponent,
     ReportsOptionsComponent,
+    TitleEditComponent,
   ],
   imports: [
     BrowserModule,
