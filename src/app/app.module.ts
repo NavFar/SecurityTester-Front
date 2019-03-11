@@ -15,6 +15,7 @@ import { AdminBaseComponent } from './components/admin-base/admin-base.component
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { FirstPageDashboardComponent } from './components/first-page-dashboard/first-page-dashboard.component';
 import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
+import { UploaderComponent } from './components/uploader/uploader.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SiteOptionsDashboardComponent } from './components/site-options-dashboa
     SideNavComponent,
     FirstPageDashboardComponent,
     SiteOptionsDashboardComponent,
+    UploaderComponent,
   ],
   imports: [
     BrowserModule,
