@@ -17,9 +17,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'admin', component: AdminBaseComponent,children:[
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    { path: 'firstPageDashboard', component: FirstPageDashboardComponent,  outlet:'adminRouter', children:[
-      { path: 'titleEdit', component: TitleEditComponent, pathMatch: 'full', outlet:'adminRouter' },
-    ] },
+    { path: 'firstPageDashboard', component: FirstPageDashboardComponent,   outlet:'adminRouter'},
+    { path: 'titleEdit', component: TitleEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'reportsDashboard', component: ReportsOptionsComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'uploader', component: UploaderComponent, pathMatch: 'full', outlet:'adminRouter' },
