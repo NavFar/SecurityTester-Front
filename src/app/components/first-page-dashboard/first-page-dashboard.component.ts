@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-page-dashboard.component.css']
 })
 export class FirstPageDashboardComponent implements OnInit {
-
-  constructor() { }
+  links:any[];
+  constructor() {
+    this.links=[
+      {name:"شعار سایت",link:""},
+      {name:"متن معرفی سایت",link:""},
+    ];
+   }
 
   ngOnInit() {
   }
