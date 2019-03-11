@@ -9,7 +9,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
-import { SideBreadcrumbComponent } from './side-breadcrumb/side-breadcrumb.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
@@ -17,7 +16,7 @@ import { FirstPageDashboardComponent } from './components/first-page-dashboard/f
 import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { ReportsOptionsComponent } from './components/reports-options/reports-options.component';
-import { TitleEditComponent } from './title-edit/title-edit.component';
+import { TitleEditComponent } from './components/title-edit/title-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { TitleEditComponent } from './title-edit/title-edit.component';
     HomePageComponent,
     ContactUsComponent,
     LoginComponent,
-    SideBreadcrumbComponent,
     DashboardComponent,
     AdminBaseComponent,
     SideNavComponent,
