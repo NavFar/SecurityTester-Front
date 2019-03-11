@@ -11,7 +11,7 @@ export class SideNavComponent implements OnInit {
   constructor() {
     this.links=[
       {link:'firstPageDashboard',name:'صفحه نخست'},
-      {link:'',name:'صفحه گزارش ارزیابی'},
+      {link:'reportsDashboard',name:'صفحه گزارش ارزیابی'},
       {link:'uploader',name:'آپلودر'},
       {link:'siteOptionsDashboard',name:'تنظیمات سایت'},
     ];
