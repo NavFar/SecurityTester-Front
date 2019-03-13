@@ -11,7 +11,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
     this.links=[
       {name:"عنوان سایت",link:"titleEdit"},
       {name:"لوگوی سایت",link:"logoEdit"},
-      {name:"متن کپی رایت",link:""},
+      {name:"متن کپی رایت",link:"copyrightEdit"},
       {name:"متن زیرنویس",link:"footnoteEdit"},
       {name:"مدیریت کاربران",link:""},
       {name:"مدیریت سوالات رایج",link:""},
