@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CopyrightEditComponent implements OnInit {
 
-  constructor() { }
-
+  copyrightEdit:string;
+  submitButton:string;
+  notShowCopyright:string;
+  constructor() {
+    this.copyrightEdit="ویرایش متن زیرنویس سایت";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowCopyright="عدم نمایش متن زیرنویس";
+   }
   ngOnInit() {
   }
 
