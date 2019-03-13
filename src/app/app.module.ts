@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RecaptchaModule ,RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
+import { QuillModule } from 'ngx-quill'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,11 +37,15 @@ import { TitleEditComponent } from './components/title-edit/title-edit.component
     UploaderComponent,
     ReportsOptionsComponent,
     TitleEditComponent,
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     RecaptchaModule,
     AppRoutingModule,
+    QuillModule,
   ],
   providers: [
     {
