@@ -1,3 +1,13 @@
-<p>
-  introduction-edit works!
-</p>
+<div class="title">
+  {{introductionEdit}}
+</div>
+<div class="editorStyle">
+<quill-editor   [style]="{height: '40vh'}"></quill-editor>
+</div>
+<div class="box">
+  <input type="checkbox"/>
+  {{notShowIntroduction}}
+</div>
+<button class="submitButton">
+  {{submitButton}}
+</button>

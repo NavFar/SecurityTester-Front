@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroductionEditComponent implements OnInit {
 
-  constructor() { }
-
+  introductionEdit:string;
+  submitButton:string;
+  notShowIntroduction:string;
+  constructor() {
+    this.introductionEdit="ویرایش متن معرفی سایت";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowIntroduction="عدم نمایش متن معرفی سایت";
+   }
   ngOnInit() {
   }
 
