@@ -10,7 +10,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
   constructor() {
     this.links=[
       {name:"عنوان سایت",link:"titleEdit"},
-      {name:"لوگوی سایت",link:""},
+      {name:"لوگوی سایت",link:"logoEdit"},
       {name:"متن کپی رایت",link:""},
       {name:"متن زیرنویس",link:""},
       {name:"مدیریت کاربران",link:""},
