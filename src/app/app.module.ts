@@ -25,6 +25,7 @@ import { IntroductionEditComponent } from './components/introduction-edit/introd
 import { CopyrightEditComponent } from './components/copyright-edit/copyright-edit.component';
 import { LogoEditComponent } from './components/logo-edit/logo-edit.component';
 import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-edit.component';
+import { AboutUsEditComponent } from './components/about-us-edit/about-us-edit.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-
     CopyrightEditComponent,
     LogoEditComponent,
     ContactUsEditComponent,
+    AboutUsEditComponent,
 
   ],
   imports: [
