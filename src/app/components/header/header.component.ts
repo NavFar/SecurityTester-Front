@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     this.links=[
       {name:"صفحه نخست",link:"home"},
       {name:"سوالات رایج",link:"#"},
-      {name:"امارارزیابی‌ها",link:"#"},
+      {name:"ارزیابی‌های اخیر",link:"#"},
       {name:"درباره ما",link:"#"},
       {name:"تماس و پشتیبانی",link:"contactus"},
     ];
