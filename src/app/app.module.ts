@@ -23,6 +23,7 @@ import { TitleEditComponent } from './components/title-edit/title-edit.component
 import { MotoEditComponent } from './components/moto-edit/moto-edit.component';
 import { IntroductionEditComponent } from './components/introduction-edit/introduction-edit.component';
 import { CopyrightEditComponent } from './components/copyright-edit/copyright-edit.component';
+import { LogoEditComponent } from './components/logo-edit/logo-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CopyrightEditComponent } from './components/copyright-edit/copyright-ed
     MotoEditComponent,
     IntroductionEditComponent,
     CopyrightEditComponent,
+    LogoEditComponent,
 
   ],
   imports: [
