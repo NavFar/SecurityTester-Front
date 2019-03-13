@@ -12,7 +12,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
       {name:"عنوان سایت",link:"titleEdit"},
       {name:"لوگوی سایت",link:"logoEdit"},
       {name:"متن کپی رایت",link:""},
-      {name:"متن زیرنویس",link:""},
+      {name:"متن زیرنویس",link:"footnoteEdit"},
       {name:"مدیریت کاربران",link:""},
       {name:"مدیریت سوالات رایج",link:""},
       {name:"درباره ما",link:"aboutUsEdit"},
