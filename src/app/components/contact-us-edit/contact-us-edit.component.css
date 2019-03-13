@@ -1,0 +1,57 @@
+.title{
+    width: 90%;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 1vh 2px 1vh 2px;
+    text-align: center;
+    border: 2px solid #969eab;
+    background: -moz-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #FAFAFA), color-stop(100%, #D1FAFF));
+    background: -webkit-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -o-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -ms-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: linear-gradient(90deg, #D1FAFF 0%, #FAFAFA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FAFAFA', endColorstr='#D1FAFF',GradientType=1 );
+}
+.editorStyle{
+  width:95%;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+}
+.submitButton{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vh;
+  background-color: #6fae43;
+  border:none;
+  font-weight: bolder;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2em;
+  padding: 4px 5px 4px 5px;
+}
+.box{
+  position:relative;
+  padding: 6px 5px 6px 5px;
+  color:#6190b8;
+  font-size: 1.2em;
+  direction: rtl;
+  width:85%;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vh;
+  border:1px solid #d7d6d6;
+}
+input[type="text"]{
+  width:55%;
+  position: absolute;
+  left :5px;
+  direction: ltr;
+}

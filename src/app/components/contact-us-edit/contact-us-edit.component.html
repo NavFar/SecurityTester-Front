@@ -1,3 +1,18 @@
-<p>
-  contact-us-edit works!
-</p>
+<div class="title">
+  {{contactUsEdit}}
+</div>
+<div class="editorStyle">
+<quill-editor   [style]="{height: '40vh'}"></quill-editor>
+</div>
+<div class="box">
+  <label for="location">{{location}}</label>
+  <input type="text" name="location">
+</div>
+<div class="box">
+  <input type="checkbox"/>
+  {{notShowContactUs}}
+</div>
+
+<button class="submitButton">
+  {{submitButton}}
+</button>
