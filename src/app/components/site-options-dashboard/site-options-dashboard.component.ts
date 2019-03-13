@@ -15,7 +15,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
       {name:"متن زیرنویس",link:""},
       {name:"مدیریت کاربران",link:""},
       {name:"مدیریت سوالات رایج",link:""},
-      {name:"درباره ما",link:""},
+      {name:"درباره ما",link:"aboutUsEdit"},
       {name:"تماس و پشتیبانی",link:"contactUsEdit"}
     ];
    }
