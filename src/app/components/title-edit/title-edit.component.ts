@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title-edit.component.css']
 })
 export class TitleEditComponent implements OnInit {
-
-  constructor() { }
+  titleEdit:string;
+  submitButton:string;
+  constructor() {
+    this.titleEdit="ویرایش عنوان سایت";
+    this.submitButton = "اعمال تغییرات"
+   }
 
   ngOnInit() {
   }
