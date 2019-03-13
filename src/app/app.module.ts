@@ -20,6 +20,7 @@ import { SiteOptionsDashboardComponent } from './components/site-options-dashboa
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { ReportsOptionsComponent } from './components/reports-options/reports-options.component';
 import { TitleEditComponent } from './components/title-edit/title-edit.component';
+import { MotoEditComponent } from './components/moto-edit/moto-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TitleEditComponent } from './components/title-edit/title-edit.component
     UploaderComponent,
     ReportsOptionsComponent,
     TitleEditComponent,
+    MotoEditComponent,
 
   ],
   imports: [
