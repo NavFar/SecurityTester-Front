@@ -12,6 +12,7 @@ import { TitleEditComponent } from './components/title-edit/title-edit.component
 import { MotoEditComponent } from './components/moto-edit/moto-edit.component';
 import { IntroductionEditComponent } from './components/introduction-edit/introduction-edit.component';
 import { LogoEditComponent } from './components/logo-edit/logo-edit.component';
+import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'motoEdit', component: MotoEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'introductionEdit', component: IntroductionEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'logoEdit', component: LogoEditComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'contactUsEdit', component: ContactUsEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'reportsDashboard', component: ReportsOptionsComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'uploader', component: UploaderComponent, pathMatch: 'full', outlet:'adminRouter' },

@@ -16,7 +16,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
       {name:"مدیریت کاربران",link:""},
       {name:"مدیریت سوالات رایج",link:""},
       {name:"درباره ما",link:""},
-      {name:"تماس و پشتیبانی",link:""}
+      {name:"تماس و پشتیبانی",link:"contactUsEdit"}
     ];
    }
 
