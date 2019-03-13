@@ -1,3 +1,13 @@
-<p>
-  footnote-edit works!
-</p>
+<div class="title">
+  {{footnoteEdit}}
+</div>
+<div class="editorStyle">
+<quill-editor   [style]="{height: '40vh'}"></quill-editor>
+</div>
+<div class="box">
+  <input type="checkbox"/>
+  {{notShowFootnote}}
+</div>
+<button class="submitButton">
+  {{submitButton}}
+</button>

@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FootnoteEditComponent implements OnInit {
 
-  constructor() { }
-
+  footnoteEdit:string;
+  submitButton:string;
+  notShowFootnote:string;
+  constructor() {
+    this.footnoteEdit="ویرایش متن زیرنویس سایت";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowFootnote="عدم نمایش متن زیرنویس";
+   }
   ngOnInit() {
   }
 
