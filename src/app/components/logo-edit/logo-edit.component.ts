@@ -7,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoEditComponent implements OnInit {
 
-  constructor() { }
-
+  logoEdit:string;
+  submitButton:string;
+  notShowLogo:string;
+  logoURL:string;
+  link:string;
+  constructor() {
+    this.logoEdit="ویرایش لوگوی سایت";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowLogo="عدم نمایش لوگو";
+    this.logoURL="آدرس لوگو";
+    this.link="مقصد"
+   }
   ngOnInit() {
   }
 
