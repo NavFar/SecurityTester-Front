@@ -9,7 +9,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
   links:any[];
   constructor() {
     this.links=[
-      {name:"عنوان سایت",link:""},
+      {name:"عنوان سایت",link:"titleEdit"},
       {name:"لوگوی سایت",link:""},
       {name:"متن کپی رایت",link:""},
       {name:"متن زیرنویس",link:""},
