@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsEditComponent implements OnInit {
 
-  constructor() { }
-
+  aboutUsEdit:string;
+  submitButton:string;
+  notShowAboutUs:string;
+  constructor() {
+    this.aboutUsEdit="ویرایش متن درباره ما";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowAboutUs="عدم نمایش متن درباره ما";
+   }
   ngOnInit() {
   }
 
