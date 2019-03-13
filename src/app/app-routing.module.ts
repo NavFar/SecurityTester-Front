@@ -10,6 +10,7 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { ReportsOptionsComponent } from './components/reports-options/reports-options.component';
 import { TitleEditComponent } from './components/title-edit/title-edit.component';
 import { MotoEditComponent } from './components/moto-edit/moto-edit.component';
+import { IntroductionEditComponent } from './components/introduction-edit/introduction-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'firstPageDashboard', component: FirstPageDashboardComponent,   outlet:'adminRouter'},
     { path: 'titleEdit', component: TitleEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'motoEdit', component: MotoEditComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'introductionEdit', component: IntroductionEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'reportsDashboard', component: ReportsOptionsComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'uploader', component: UploaderComponent, pathMatch: 'full', outlet:'adminRouter' },

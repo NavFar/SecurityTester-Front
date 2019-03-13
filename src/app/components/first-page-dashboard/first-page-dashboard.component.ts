@@ -10,7 +10,7 @@ export class FirstPageDashboardComponent implements OnInit {
   constructor() {
     this.links=[
       {name:"شعار سایت",link:"motoEdit"},
-      {name:"متن معرفی سایت",link:""},
+      {name:"متن معرفی سایت",link:"introductionEdit"},
     ];
    }
 
