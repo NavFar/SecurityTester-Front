@@ -1,3 +1,13 @@
-<p>
-  moto-edit works!
-</p>
+<div class="title">
+  {{motoEdit}}
+</div>
+<div class="editorStyle">
+<quill-editor   [style]="{height: '40vh'}"></quill-editor>
+</div>
+<div class="box">
+  <input type="checkbox"/>
+  {{notShowMoto}}
+</div>
+<button class="submitButton">
+  {{submitButton}}
+</button>

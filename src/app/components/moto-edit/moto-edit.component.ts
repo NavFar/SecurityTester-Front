@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MotoEditComponent implements OnInit {
 
-  constructor() { }
-
+  motoEdit:string;
+  submitButton:string;
+  notShowMoto:string;
+  constructor() {
+    this.motoEdit="ویرایش شعار سایت";
+    this.submitButton = "اعمال تغییرات";
+    this.notShowMoto="عدم نمایش شعار سایت";
+   }
   ngOnInit() {
   }
 
