@@ -27,6 +27,7 @@ import { LogoEditComponent } from './components/logo-edit/logo-edit.component';
 import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-edit.component';
 import { AboutUsEditComponent } from './components/about-us-edit/about-us-edit.component';
 import { FootnoteEditComponent } from './components/footnote-edit/footnote-edit.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FootnoteEditComponent } from './components/footnote-edit/footnote-edit.
     ContactUsEditComponent,
     AboutUsEditComponent,
     FootnoteEditComponent,
+    UserComponent,
 
   ],
   imports: [
