@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
+  logout = faSignOutAlt;
+  username:string;
+  constructor() {
+    this.username="نام کاربر"
+   }
 
   ngOnInit() {
   }
