@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RecaptchaModule ,RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { QuillModule } from 'ngx-quill'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,6 +63,7 @@ import { UserComponent } from './components/user/user.component';
     RecaptchaModule,
     AppRoutingModule,
     QuillModule,
+    FontAwesomeModule,
   ],
   providers: [
     {
@@ -70,4 +72,4 @@ import { UserComponent } from './components/user/user.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
