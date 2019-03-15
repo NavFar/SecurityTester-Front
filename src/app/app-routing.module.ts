@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent, pathMatch: 'full' },
   { path: 'contactus', component: ContactUsComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'faq', component: FaqComponent, pathMatch: 'full' },
   { path: 'admin', component: AdminBaseComponent,children:[
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     { path: 'firstPageDashboard', component: FirstPageDashboardComponent,   outlet:'adminRouter'},
