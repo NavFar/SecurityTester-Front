@@ -6,14 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  moto:string;
   introduction:string;
   ipInputPlaceHolder:string;
   exposeText:string;
   notBotText:string;
   test:string;
   constructor() {
-    this.moto="شعار سایت";
     this.introduction="متن معرفی";
     this.ipInputPlaceHolder="نام دامنه یا ای‌پی "
     this.test="ارزیابی";

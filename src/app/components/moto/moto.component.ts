@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moto.component.css']
 })
 export class MotoComponent implements OnInit {
+  moto:string;
 
-  constructor() { }
+  constructor() {
+    this.moto="شعار سایت";
+   }
 
   ngOnInit() {
   }
