@@ -67,9 +67,7 @@ span{
 }
 .progressBar{
   border-radius: 20px;
-  position: absolute;
-  top:1vh;
-  height: 2vh;
+  height: 100%;
   background-color: #73ab4a;
 }
 .progressBarValue{
@@ -84,6 +82,9 @@ span{
   font-size: 2vh;
 }
 .progressBarProxy{
-  width: 90%;
+  position: absolute;
+  top:1vh;
   height: 2vh;
+  width: 96%;
+  margin-left: 2%;
 }

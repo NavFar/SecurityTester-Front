@@ -14,7 +14,7 @@ export class UploaderComponent implements OnInit {
     this.uploaderTitle="اپلودر سایت";
     this.selectFile="انتخاب فایل";
     this.dragText="فایل را به اینجا بکشید تا اپلود شودیا"
-    this.value=100;
+    this.value=90;
   }
   ngOnInit() {
   }
