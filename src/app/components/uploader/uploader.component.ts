@@ -6,10 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./uploader.component.css']
 })
 export class UploaderComponent implements OnInit {
-
-  constructor() { }
-
+  uploaderTitle:string;
+  selectFile:string;
+  dragText:string;
+  value:number;
+  constructor() {
+    this.uploaderTitle="اپلودر سایت";
+    this.selectFile="انتخاب فایل";
+    this.dragText="فایل را به اینجا بکشید تا اپلود شودیا"
+    this.value=100;
+  }
   ngOnInit() {
   }
-
+  drop(event){
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("hell");
+    console.log(event.dataTransfer.files[0].name);
+  }
+  dragover(event){
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("wow");
+  }
+  temp(){
+    console.log("Hellow");
+  }
 }

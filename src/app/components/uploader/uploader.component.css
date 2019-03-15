@@ -1,0 +1,89 @@
+.title{
+    width: 90%;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 1vh 2px 1vh 2px;
+    text-align: center;
+    border: 2px solid #969eab;
+    background: -moz-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #FAFAFA), color-stop(100%, #D1FAFF));
+    background: -webkit-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -o-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: -ms-linear-gradient(0deg, #D1FAFF 0%, #FAFAFA 100%);
+    background: linear-gradient(90deg, #D1FAFF 0%, #FAFAFA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FAFAFA', endColorstr='#D1FAFF',GradientType=1 );
+}
+.container{
+  display: table;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="file"]{
+  display: none;
+}
+.deepIn{
+    position: absolute;
+    bottom: 2vh;
+    width: 100%;
+}
+label{
+  margin-top: 1vh;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  background: #5c9ad3;
+  padding: 6px 5px 6px 5px;
+  border-radius:10px;
+  color: white;
+  font-weight: bold;
+
+}
+span{
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+.dropZone{
+  width: 100%;
+  height: 20vh;
+  border-radius: 25px;
+  border-style: dotted;
+  vertical-align: middle;
+  position: relative;
+}
+.progressBarContainer{
+  margin-top: 2vh;
+  height: 4vh;
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #344f21;
+  /* padding-left: 1vw; */
+  /* padding-right: 1vw; */
+}
+.progressBar{
+  border-radius: 20px;
+  position: absolute;
+  top:1vh;
+  height: 2vh;
+  background-color: #73ab4a;
+}
+.progressBarValue{
+  color: white;
+  width: 100%;
+  top:0.6vh;
+  text-align: center;
+  display: table;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 2vh;
+}
+.progressBarProxy{
+  width: 90%;
+  height: 2vh;
+}

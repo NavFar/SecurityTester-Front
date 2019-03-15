@@ -7,6 +7,10 @@
 body{
   margin: 0;
 }
+input, textarea {
+  background-color: #fff;
+  color: #222;
+}
 ::-webkit-scrollbar {
     width: 5px;
 }

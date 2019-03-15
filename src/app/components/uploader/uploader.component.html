@@ -1,3 +1,23 @@
-<p>
-  uploader works!
-</p>
+<div class="title">
+  {{uploaderTitle}}
+</div>
+<div class="container">
+
+<div class="dropZone" (mouseover)="temp()" (dragover)="dragover($event)" (drop)="drop($event)">
+  <input id="file" type="file" >
+  <div class="deepIn">
+  <span>{{dragText}}</span>
+  <label for="file">
+    {{selectFile}}
+    </label>
+  </div>
+</div>
+<div class="progressBarContainer">
+
+  <div class="progressBar" [style.width.%]="value">
+  </div>
+    <div class="progressBarValue">
+      {{value}}%
+    </div>
+</div>
+</div>

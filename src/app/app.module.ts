@@ -3,7 +3,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RecaptchaModule ,RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
