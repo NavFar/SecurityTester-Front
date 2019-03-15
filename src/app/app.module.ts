@@ -29,6 +29,7 @@ import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-
 import { AboutUsEditComponent } from './components/about-us-edit/about-us-edit.component';
 import { FootnoteEditComponent } from './components/footnote-edit/footnote-edit.component';
 import { UserComponent } from './components/user/user.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { UserComponent } from './components/user/user.component';
     AboutUsEditComponent,
     FootnoteEditComponent,
     UserComponent,
+    FaqComponent,
 
   ],
   imports: [
