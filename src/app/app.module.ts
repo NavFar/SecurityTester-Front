@@ -11,6 +11,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { LoginComponent } from './components/login/login.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { MotoComponent } from './components/moto/moto.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     LoginComponent,
     FaqComponent,
     AboutUsComponent,
+    MotoComponent,
 
   ],
   imports: [
