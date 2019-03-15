@@ -10,6 +10,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FaqComponent } from './components/faq/faq.component';
     ContactUsComponent,
     LoginComponent,
     FaqComponent,
+    AboutUsComponent,
 
   ],
   imports: [
