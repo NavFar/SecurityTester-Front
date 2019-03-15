@@ -4,6 +4,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'contactus', component: ContactUsComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'faq', component: FaqComponent, pathMatch: 'full' },
+  { path: 'aboutUs', component: AboutUsComponent, pathMatch: 'full' },
   { path: '' ,loadChildren:'./admin/admin.module#AdminModule'},
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   { path: '**', redirectTo: 'home', pathMatch: 'full' },

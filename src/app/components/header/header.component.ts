@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
       {name:"صفحه نخست",link:"home"},
       {name:"سوالات رایج",link:"faq"},
       {name:"ارزیابی‌های اخیر",link:"#"},
-      {name:"درباره ما",link:"#"},
+      {name:"درباره ما",link:"aboutUs"},
       {name:"تماس و پشتیبانی",link:"contactus"},
     ];
    }
