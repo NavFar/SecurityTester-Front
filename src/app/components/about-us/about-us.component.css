@@ -1,0 +1,8 @@
+.container{
+  width:90%;
+  border: 2px solid #5a9bd5;
+  height: 73vh;
+  position: table;
+  margin-left: auto;
+  margin-right: auto;
+}
