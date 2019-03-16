@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SharedModulesModule } from './sharedModules.module'
+import { SharedModulesModule } from './sharedModules.module';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 // import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,8 +32,10 @@ import { QuestionComponent } from './components/question/question.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModulesModule,
+    AppRoutingModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     // AdminModule
   ],
   providers:[],
