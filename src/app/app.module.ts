@@ -34,7 +34,7 @@ import { QuestionComponent } from './components/question/question.component';
     SharedModulesModule,
     // AdminModule
   ],
-
-  bootstrap: [AppComponent]
+  providers:[],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
