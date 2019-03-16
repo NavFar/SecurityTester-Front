@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
    ngOnInit() {
      this.pageContentService.getPageContent().subscribe(
        (res) =>{
-         this.siteTitle=res.siteTitle;
          this.links[0].name=res.homePage;
          this.links[1].name=res.faq;
          this.links[2].name=res.recent;
