@@ -7,10 +7,28 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PageContentService {
-  constructor(private http: HttpClient,private messageService: MessageService){}
-  pageContent():Observable<any>{
-    return this.http.post<any>("/api/pageContent/").pipe(
+  cachedPageContent:any;
+  hasLoaded:boolean;
+  constructor(private http: HttpClient){
+    this.hasLoaded=false;
+  }
+  getPageContent():Observable<any>{
 
-    );
+    if(this.hasLoaded)
+    {
+      return new Observable((observer)=>{
+        const {next, error} = observer;
+        observer.next(this.cachedPageContent);
+      }
+      );
+    }else
+    {
+      return this.http.post<any>("/api/App/pageContent/",null).pipe(
+        tap((h)=>{
+          this.hasLoaded = true;
+          this.cachedPageContent=h;
+        })
+      );
+    }
   }
 }
