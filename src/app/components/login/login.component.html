@@ -2,14 +2,14 @@
 <div class="title">
   {{loginTitle}}
 </div>
-<input type="text" [placeholder]="usernamePlaceHolder"/>
-<input type="password" [placeholder]="passwordPlaceHolder"/>
+<input type="text" name="username" [(ngModel)]="username" [placeholder]="usernamePlaceHolder"/>
+<input type="password" name="password" [(ngModel)]="password" [placeholder]="passwordPlaceHolder"/>
 
 <div class="centric">
-<re-captcha class="" (resolved)="resolved($event)"  style=";margin:0;"></re-captcha>
+<re-captcha class="" [(ngModel)]="recaptcha"    style=";margin:0;"></re-captcha>
 <!-- <input name="rememberMe" type="checkbox"/> -->
 </div>
 <div class="centric">
-  <button>{{login}}</button>
+  <button (click)="submit()">{{login}}</button>
 </div>
 </div>

@@ -11,11 +11,14 @@ export class LoginComponent implements OnInit {
   passwordPlaceHolder:string;
   loginTitle:string;
   login:string;
+  username:string;
+  password:any;
+  recaptcha:string;
   constructor(private pageContentService : PageContentService) {
     this.usernamePlaceHolder="";
     this.passwordPlaceHolder="";
     this.login="";
-    this.loginTitle=""
+    this.loginTitle="";
    }
 
    ngOnInit() {
@@ -32,5 +35,7 @@ export class LoginComponent implements OnInit {
        }
      );
    }
+   submit(){
 
+   }
 }
