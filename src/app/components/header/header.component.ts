@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-header',
@@ -6,20 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title :string;
+  siteTitle :string;
   links:any[];
-  constructor() {
-    this.title = "عنوان سایت";
+  constructor(private pageContentService : PageContentService) {
+    this.siteTitle = "";
     this.links=[
-      {name:"صفحه نخست",link:"home"},
-      {name:"سوالات رایج",link:"faq"},
-      {name:"ارزیابی‌های اخیر",link:"#"},
-      {name:"درباره ما",link:"aboutUs"},
-      {name:"تماس و پشتیبانی",link:"contactus"},
+      {name:"",link:"home"},
+      {name:"",link:"faq"},
+      {name:"",link:"#"},
+      {name:"",link:"aboutUs"},
+      {name:"",link:"contactus"},
     ];
    }
-
-  ngOnInit() {
-  }
+   ngOnInit() {
+     this.pageContentService.getPageContent().subscribe(
+       (res) =>{
+         this.siteTitle=res.siteTitle;
+         this.links[0].name=res.homePage;
+         this.links[1].name=res.faq;
+         this.links[2].name=res.recent;
+         this.links[3].name=res.aboutUs;
+         this.links[4].name=res.contactUs;
+       },
+       (err) =>{
+         console.log("cant get values sorry");
+       }
+     );
+   }
 
 }

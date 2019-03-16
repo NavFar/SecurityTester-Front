@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-login',
@@ -6,18 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string;
-  password:string;
+  usernamePlaceHolder:string;
+  passwordPlaceHolder:string;
   loginTitle:string;
   login:string;
-  constructor() {
-    this.username="نام کاربری";
-    this.password="گذرواژه";
-    this.login="ورود";
-    this.loginTitle="ورود کاربر"
+  constructor(private pageContentService : PageContentService) {
+    this.usernamePlaceHolder="";
+    this.passwordPlaceHolder="";
+    this.login="";
+    this.loginTitle=""
    }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+     this.pageContentService.getPageContent().subscribe(
+       (res) =>{
+         this.usernamePlaceHolder=res.usernamePlaceHolder;
+         this.passwordPlaceHolder=res.passwordPlaceHolder;
+         this.login=res.login;
+         this.loginTitle=res.loginTitle;
+
+       },
+       (err) =>{
+         console.log("cant get values sorry");
+       }
+     );
+   }
 
 }

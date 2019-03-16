@@ -5,12 +5,12 @@
 <div class="qa" [ngClass]="flag ? 'open':''">
 <div class="question" >
   <div class="header">
-  پرسش:
+    {{questionTitle}}:
 </div>  {{question}}
 </div>
 <div class="answer">
   <div class="header">
-  پاسخ:
+    {{answerTitle}}:
 </div>
   {{answer}}
 </div>

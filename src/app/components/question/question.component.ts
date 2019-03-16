@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-question',
@@ -10,12 +11,25 @@ export class QuestionComponent implements OnInit {
   @Input()question:string;
   @Input()answer:string;
   flag:boolean;
-  constructor() {
+  questionTitle:string;
+  answerTitle:string;
+  constructor(private pageContentService : PageContentService) {
       this.flag=false;
+      this.questionTitle="";
+      this.answerTitle="";
    }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+     this.pageContentService.getPageContent().subscribe(
+       (res) =>{
+         this.questionTitle=res.questionTitle;
+         this.answerTitle=res.answerTitle;
+       },
+       (err) =>{
+         console.log("cant get values sorry");
+       }
+     );
+   }
   toggle(){
     this.flag= !this.flag;
   }
