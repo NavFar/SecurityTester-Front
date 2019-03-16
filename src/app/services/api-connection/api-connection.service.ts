@@ -8,5 +8,5 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ApiConnectionService {
 
-  constructor(private http: HttpClient,private messageService: MessageService){}
+  constructor(private http: HttpClient){}
 }
