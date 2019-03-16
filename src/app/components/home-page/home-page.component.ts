@@ -1,25 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PageContentService } from '../../services/page-content/page-content.service'
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  introduction:string;
   ipInputPlaceHolder:string;
+  introduction:string;
   exposeText:string;
-  notBotText:string;
   test:string;
-  constructor() {
-    this.introduction="متن معرفی";
-    this.ipInputPlaceHolder="نام دامنه یا ای‌پی "
-    this.test="ارزیابی";
-    this.exposeText="نتایج این ارزیابی برای عموم قابل مشاهده نباشد.";
-    this.notBotText="من بات نیستم.";
+  constructor(private pageContentService : PageContentService) {
+      this.ipInputPlaceHolder="";
+      this.introduction="متن معرفی سایت";
+      this.exposeText="";
+      this.test="";
    }
 
   ngOnInit() {
+    this.pageContentService.getPageContent().subscribe(
+      (res) =>{
+        this.ipInputPlaceHolder=res.ipInputPlaceHolder;
+        this.test=res.test;
+        this.exposeText=res.exposeText;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
   }
   resolved($event){
     console.log(event);
