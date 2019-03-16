@@ -1,3 +1,1 @@
-<p>
-  faq works!
-</p>
+<app-question *ngFor="let faq of faqs" [title]="faq.title" [question]="faq.question" [answer]="faq.answer"></app-question>

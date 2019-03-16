@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-faq',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
-
-  constructor() { }
+  faqs:any[];
+  constructor() {
+    this.faqs=[
+      // {title:"",question:"",answer:""},
+    ];
+   }
 
   ngOnInit() {
   }
