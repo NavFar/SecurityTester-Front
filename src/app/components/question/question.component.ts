@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-question',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-
-  constructor() { }
+  @Input()title:string;
+  @Input()question:string;
+  @Input()answer:string;
+  flag:boolean;
+  constructor() {
+      this.flag=false;
+   }
 
   ngOnInit() {
+  }
+  toggle(){
+    this.flag= !this.flag;
   }
 
 }

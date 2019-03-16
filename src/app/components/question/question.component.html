@@ -1,3 +1,18 @@
-<p>
-  question works!
-</p>
+<div class="container">
+<div class="title" (click)="toggle()">
+  {{title}}
+</div>
+<div class="qa" [ngClass]="flag ? 'open':''">
+<div class="question" >
+  <div class="header">
+  پرسش:
+</div>  {{question}}
+</div>
+<div class="answer">
+  <div class="header">
+  پاسخ:
+</div>
+  {{answer}}
+</div>
+</div>
+</div>
