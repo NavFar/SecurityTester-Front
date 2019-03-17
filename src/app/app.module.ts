@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { SharedModulesModule } from './sharedModules.module';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+
 // import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MotoComponent } from './components/moto/moto.component';
 import { QuestionComponent } from './components/question/question.component';
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +41,12 @@ import { QuestionComponent } from './components/question/question.component';
     AppRoutingModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:3000'],
+      }
+    }),
     // AdminModule
   ],
   providers:[],
