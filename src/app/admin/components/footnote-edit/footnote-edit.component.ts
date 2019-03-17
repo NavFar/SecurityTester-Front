@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FootnoteEditComponent implements OnInit {
 
-  copyrightEdit:string;
+  footnoteEdit:string;
+  notShowFootnote:string;
   submitButton:string;
-  notShowCopyright:string;
   constructor() {
-    this.copyrightEdit="ویرایش متن کپی رایت سایت";
+    this.footnoteEdit="ویرایش متن زیرنویس";
     this.submitButton = "اعمال تغییرات";
-    this.notShowCopyright="عدم نمایش متن کپی رایت";
+    this.notShowFootnote="عدم نمایش متن زیرنویس";
    }
   ngOnInit() {
   }
