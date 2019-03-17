@@ -36,6 +36,5 @@ export class LoginComponent implements OnInit {
      );
    }
    submit(){
-     console.log(localStorage.getItem(currentUser));
    }
 }
