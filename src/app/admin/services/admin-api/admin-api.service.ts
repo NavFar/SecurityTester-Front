@@ -16,4 +16,10 @@ export class AdminApiService {
   setMoto(moto){
       return this.http.post<any>("/api/admin/siteData/setMoto/",moto);
   }
+  getIntroduction(){
+      return this.http.post<any>("/api/admin/siteData/getIntroduction/",null);
+  }
+  setIntroduction(introduction){
+      return this.http.post<any>("/api/admin/siteData/setIntroduction/",introduction);
+  }
 }
