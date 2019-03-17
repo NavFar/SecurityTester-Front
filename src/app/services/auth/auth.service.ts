@@ -9,7 +9,7 @@ export class AuthService {
   constructor(public jwtHelper : JwtHelperService) {
    }
    public isAuthenticated():boolean{
-     const token=localStorage.getItem('token')|"";
-     return !this.jwtHelper.isTokenExpired(token);
+     const token=localStorage.getItem('token')||"";
+     return this.jwtHelper.isTokenExpired(token);
    }
 }
