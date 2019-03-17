@@ -1,4 +1,6 @@
 <div class="container">
-  <fa-icon class="icon" [styles]="{ 'color': 'red'}" [icon]="logout"></fa-icon>
+  <div class="exit" (click)="exit()">
+  <fa-icon class="icon"  [styles]="{ 'color': 'red'}" [icon]="logout"></fa-icon>
+</div>
   {{username}}
 </div>
