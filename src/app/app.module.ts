@@ -1,9 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SharedModulesModule } from './sharedModules.module';
-import { RecaptchaModule } from 'ng-recaptcha';
-import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { JwtModule } from '@auth0/angular-jwt';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { RecaptchaModule ,RECAPTCHA_LANGUAGE ,RecaptchaSettings ,RECAPTCHA_SETTINGS } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 // import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,19 +41,36 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
-    SharedModulesModule,
-    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    FontAwesomeModule,
+    ToastrModule.forRoot({
+        positionClass: 'toast-top-center',
+      }
+    ),
+    AppRoutingModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:3000'],
       }
     }),
+
     // AdminModule
   ],
-  providers:[],
+  providers: [
+    {
+      provide: RECAPTCHA_LANGUAGE,
+      useValue: 'fa' ,
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: { siteKey: "6LdWKpUUAAAAAPXSHP8T7wd_9qomdXRamOJJ2-mE" } as RecaptchaSettings,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModulesModule } from '../sharedModules.module'
-import { FormsModule} from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AdminRoutingModule } from './admin-routing.module';
 
@@ -48,8 +47,7 @@ import { UserComponent } from './components/user/user.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModulesModule,
-    FormsModule,
+    FontAwesomeModule,
     QuillModule,
   ]
 })
