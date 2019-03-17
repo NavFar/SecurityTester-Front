@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
+
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
 import { FirstPageDashboardComponent } from './components/first-page-dashboard/first-page-dashboard.component';
 import { SiteOptionsDashboardComponent } from './components/site-options-dashboard/site-options-dashboard.component';
@@ -29,7 +31,7 @@ const routes: Routes = [
     { path: 'copyrightEdit', component: CopyrightEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'reportsDashboard', component: ReportsOptionsComponent, pathMatch: 'full', outlet:'adminRouter' },
-  ],},
+  ], canActivate:[AuthGuardService]},
 
 ];
 
