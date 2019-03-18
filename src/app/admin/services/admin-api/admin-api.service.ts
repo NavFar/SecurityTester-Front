@@ -52,4 +52,10 @@ export class AdminApiService {
   setAboutUs(aboutUs){
       return this.http.post<any>("/api/admin/siteData/setAboutUs/",aboutUs);
   }
+  getContactUs(){
+      return this.http.post<any>("/api/admin/siteData/getContactUs/",null);
+  }
+  setContactUs(contactUs){
+      return this.http.post<any>("/api/admin/siteData/setContactUs/",contactUs);
+  }
 }
