@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   siteTitle :string;
   links:any[];
   constructor(private pageContentService : PageContentService) {
-    this.siteTitle = "عنوان سایت";
+    this.siteTitle = "";
     this.links=[
       {name:"",link:"home"},
       {name:"",link:"faq"},
