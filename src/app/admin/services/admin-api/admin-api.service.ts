@@ -40,4 +40,10 @@ export class AdminApiService {
   setCopyright(copyright){
       return this.http.post<any>("/api/admin/siteData/setCopyright/",copyright);
   }
+  getFooter(){
+      return this.http.post<any>("/api/admin/siteData/getFooter/",null);
+  }
+  setFooter(footer){
+      return this.http.post<any>("/api/admin/siteData/setFooter/",footer);
+  }
 }
