@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   siteTitle :string;
   links:any[];
   constructor(private pageContentService : PageContentService) {
-    this.siteTitle = "";
+    this.siteTitle = "عنوان سایت";
     this.links=[
       {name:"",link:"home"},
       {name:"",link:"faq"},
@@ -27,6 +27,14 @@ export class HeaderComponent implements OnInit {
          this.links[2].name=res.recent;
          this.links[3].name=res.aboutUs;
          this.links[4].name=res.contactUs;
+       },
+       (err) =>{
+         console.log("cant get values sorry");
+       }
+     );
+     this.pageContentService.getSiteData().subscribe(
+       (res) =>{
+         this.siteTitle = res.title;
        },
        (err) =>{
          console.log("cant get values sorry");
