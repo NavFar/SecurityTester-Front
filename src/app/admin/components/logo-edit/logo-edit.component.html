@@ -4,18 +4,18 @@
 
 <div class="box">
   <label for="logoURL">{{logoURL}}</label>
-  <input type="text" name="logoURL">
+  <input [(ngModel)]="url" type="text" name="logoURL">
 </div>
 <div class="box">
-  <label for="logoURL">{{link}}</label>
-  <input type="text" name="link">
+  <label for="link">{{link}}</label>
+  <input type="text" [(ngModel)]="destination" name="link">
 </div>
 
 <div class="box">
-  <input type="checkbox"/>
+  <input [(ngModel)]="show" type="checkbox"/>
   {{notShowLogo}}
 </div>
 
-<button class="submitButton">
+<button (click)="submit()" class="submitButton">
   {{submitButton}}
 </button>

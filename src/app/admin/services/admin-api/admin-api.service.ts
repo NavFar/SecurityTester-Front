@@ -28,4 +28,10 @@ export class AdminApiService {
   setTitle(title){
       return this.http.post<any>("/api/admin/siteData/setTitle/",title);
   }
+  getLogo(){
+      return this.http.post<any>("/api/admin/siteData/getLogo/",null);
+  }
+  setLogo(logo){
+      return this.http.post<any>("/api/admin/siteData/setLogo/",logo);
+  }
 }
