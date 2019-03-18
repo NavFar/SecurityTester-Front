@@ -8,13 +8,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class PageContentService {
   cachedPageContent:any;
-  hasLoaded:boolean;
+  hasLoadedPageContent:boolean;
+  cachedSiteData:any;
+  hasLoadedSiteData:boolean;
   constructor(private http: HttpClient){
-    this.hasLoaded=false;
+    this.hasLoadedPageContent=false;
+    this.hasLoadedSiteData=false;
   }
   getPageContent():Observable<any>{
 
-    if(this.hasLoaded)
+    if(this.hasLoadedPageContent)
     {
       return new Observable((observer)=>{
         const {next, error} = observer;
@@ -25,10 +28,31 @@ export class PageContentService {
     {
       return this.http.post<any>("/api/App/pageContent/",null).pipe(
         tap((h)=>{
-          this.hasLoaded = true;
+          this.hasLoadedPageContent = true;
           this.cachedPageContent=h;
         })
       );
     }
   }
+
+  getSiteData():Observable<any>{
+
+    if(this.hasLoadedSiteData)
+    {
+      return new Observable((observer)=>{
+        const {next, error} = observer;
+        observer.next(this.cachedSiteData);
+      }
+      );
+    }else
+    {
+      return this.http.post<any>("/api/App/siteData/",null).pipe(
+        tap((h)=>{
+          this.hasLoadedSiteData = true;
+          this.cachedSiteData=h;
+        })
+      );
+    }
+  }
+
 }
