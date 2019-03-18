@@ -18,7 +18,7 @@ export class IntroductionEditComponent implements OnInit {
     this.introductionEdit="ویرایش متن معرفی سایت";
     this.submitButton = "اعمال تغییرات";
     this.notShowIntroduction="عدم نمایش متن معرفی سایت";
-    this.content="",
+    this.content="";
     this.show=false;
     this.toast.info("در حال دریافت اطلاعات");
    }

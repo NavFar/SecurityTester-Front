@@ -18,7 +18,7 @@ export class MotoEditComponent implements OnInit {
     this.motoEdit="ویرایش شعار سایت";
     this.submitButton = "اعمال تغییرات";
     this.notShowMoto="عدم نمایش شعار سایت";
-    this.content="",
+    this.content="";
     this.show=false;
     this.toast.info("در حال دریافت اطلاعات");
    }
