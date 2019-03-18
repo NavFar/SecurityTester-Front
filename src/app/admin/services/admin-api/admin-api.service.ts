@@ -46,4 +46,10 @@ export class AdminApiService {
   setFooter(footer){
       return this.http.post<any>("/api/admin/siteData/setFooter/",footer);
   }
+  getAboutUs(){
+      return this.http.post<any>("/api/admin/siteData/getAboutUs/",null);
+  }
+  setAboutUs(aboutUs){
+      return this.http.post<any>("/api/admin/siteData/setAboutUs/",aboutUs);
+  }
 }
