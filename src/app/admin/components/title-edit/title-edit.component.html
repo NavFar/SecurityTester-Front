@@ -2,7 +2,7 @@
   {{titleEdit}}
 </div>
 <div class="editorStyle">
-<quill-editor [(ngModel)]="content"  [style]="{height: '40vh'}"></quill-editor>
+<quill-editor [(ngModel)]="!content"  [style]="{height: '40vh'}"></quill-editor>
 </div>
 <button (click)="submit()" class="submitButton">
   {{submitButton}}

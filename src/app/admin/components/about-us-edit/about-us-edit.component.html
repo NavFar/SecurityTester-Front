@@ -5,7 +5,7 @@
 <quill-editor [(ngModel)]="content"  [style]="{height: '40vh'}"></quill-editor>
 </div>
 <div class="box">
-  <input [(ngModel)]="show" type="checkbox"/>
+  <input [(ngModel)]="!show" type="checkbox"/>
   {{notShowAboutUs}}
 </div>
 <button (click)="submit()" class="submitButton">
