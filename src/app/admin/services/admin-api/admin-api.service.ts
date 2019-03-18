@@ -22,4 +22,10 @@ export class AdminApiService {
   setIntroduction(introduction){
       return this.http.post<any>("/api/admin/siteData/setIntroduction/",introduction);
   }
+  getTitle(){
+      return this.http.post<any>("/api/admin/siteData/getTitle/",null);
+  }
+  setTitle(title){
+      return this.http.post<any>("/api/admin/siteData/setTitle/",title);
+  }
 }
