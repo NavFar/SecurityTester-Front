@@ -85,6 +85,9 @@ export class LoginComponent implements OnInit {
          this.router.navigate(['admin'])
        },
        (err)=>{
+         this.username="";
+         this.password="";
+         this.recaptcha="";
          if(err.status==500)
          {
            this.toast.error('',this.serveFailed);
