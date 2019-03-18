@@ -36,7 +36,7 @@ export class AboutUsEditComponent implements OnInit {
   }
   submit(){
     this.toast.info("در حال ثبت داده");
-    this.adminApi.setAboutUs({aboutUs:{show:this.show,content:this.content}}).subscribe(
+    this.adminApi.setAboutUs({aboutUs:{show:!this.show,content:this.content}}).subscribe(
       (res)=>{
         this.toast.success("اطلاعات ثبت شد");
       },

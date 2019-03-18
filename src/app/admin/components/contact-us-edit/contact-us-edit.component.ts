@@ -38,7 +38,7 @@ export class ContactUsEditComponent implements OnInit {
   }
   submit(){
     this.toast.info("در حال ثبت داده");
-    this.adminApi.setContactUs({contactUs:{show:this.show,content:this.content}}).subscribe(
+    this.adminApi.setContactUs({contactUs:{show:!this.show,content:this.content}}).subscribe(
       (res)=>{
         this.toast.success("اطلاعات ثبت شد");
       },

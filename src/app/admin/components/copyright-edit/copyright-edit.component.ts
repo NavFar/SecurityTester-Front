@@ -36,7 +36,7 @@ export class CopyrightEditComponent implements OnInit {
    }
    submit(){
      this.toast.info("در حال ثبت داده");
-     this.adminApi.setCopyright({copyright:{show:this.show,content:this.content}}).subscribe(
+     this.adminApi.setCopyright({copyright:{show:!this.show,content:this.content}}).subscribe(
        (res)=>{
          this.toast.success("اطلاعات ثبت شد");
        },

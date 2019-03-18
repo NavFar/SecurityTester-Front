@@ -12,7 +12,7 @@ export class HomePageComponent implements OnInit {
   test:string;
   constructor(private pageContentService : PageContentService) {
       this.ipInputPlaceHolder="";
-      this.introduction="متن معرفی سایت";
+      this.introduction="";
       this.exposeText="";
       this.test="";
    }
@@ -23,6 +23,14 @@ export class HomePageComponent implements OnInit {
         this.ipInputPlaceHolder=res.ipInputPlaceHolder;
         this.test=res.test;
         this.exposeText=res.exposeText;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
+    this.pageContentService.getSiteData().subscribe(
+      (res) =>{
+        this.introduction = res.introduction;
       },
       (err) =>{
         console.log("cant get values sorry");

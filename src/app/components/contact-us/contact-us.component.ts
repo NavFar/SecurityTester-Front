@@ -13,8 +13,7 @@ export class ContactUsComponent implements OnInit {
   send:string;
   mapPosition:string;
   constructor(private pageContentService : PageContentService) {
-    this.contactUsText="متن ارتباط با ما"
-    this.notBotText="من بات نیستم.";
+    this.contactUsText=""
     this.mapPosition="موقعیت رو نقشه"
     this.send="";
     this.contactUsFields=[
@@ -35,6 +34,14 @@ export class ContactUsComponent implements OnInit {
         this.contactUsFields[2].placeholder=res.phone;
         this.contactUsFields[3].placeholder=res.subject;
         this.contactUsFields[4].placeholder=res.text;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
+    this.pageContentService.getSiteData().subscribe(
+      (res) =>{
+        this.contactUsText = res.contactUs;
       },
       (err) =>{
         console.log("cant get values sorry");

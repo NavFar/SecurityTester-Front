@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-about-us',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
   aboutUs:string;
-  constructor() {
-    this.aboutUs="متن درباره ما";
+  constructor(private pageContentService : PageContentService) {
+    this.aboutUs="";
    }
-
-  ngOnInit() {
-  }
-
+   ngOnInit(){
+   this.pageContentService.getSiteData().subscribe(
+     (res) =>{
+       this.aboutUs = res.aboutUs;
+     },
+     (err) =>{
+       console.log("cant get values sorry");
+     }
+   );
+ }
 }

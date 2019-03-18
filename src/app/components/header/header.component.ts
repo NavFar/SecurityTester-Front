@@ -9,6 +9,8 @@ import { PageContentService } from '../../services/page-content/page-content.ser
 export class HeaderComponent implements OnInit {
   siteTitle :string;
   links:any[];
+  destination:any;
+  logo:any;
   constructor(private pageContentService : PageContentService) {
     this.siteTitle = "";
     this.links=[
@@ -35,6 +37,8 @@ export class HeaderComponent implements OnInit {
      this.pageContentService.getSiteData().subscribe(
        (res) =>{
          this.siteTitle = res.title;
+         this.logo=res.logo;
+         this.destination=res.destination
        },
        (err) =>{
          console.log("cant get values sorry");

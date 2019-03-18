@@ -42,8 +42,9 @@ export class LogoEditComponent implements OnInit {
      );
    }
    submit(){
+     console.log(this.show)
      this.toast.info("در حال ثبت داده");
-     this.adminApi.setLogo({logo:{show:this.show,url:this.url,destination:this.destination}}).subscribe(
+     this.adminApi.setLogo({logo:{show:!this.show,url:this.url,destination:this.destination}}).subscribe(
        (res)=>{
          this.toast.success("اطلاعات ثبت شد");
        },

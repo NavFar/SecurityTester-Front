@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-moto',
@@ -8,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class MotoComponent implements OnInit {
   moto:string;
 
-  constructor() {
-    this.moto="شعار سایت";
+  constructor(private pageContentService : PageContentService) {
+    this.moto="";
    }
 
   ngOnInit() {
+    this.pageContentService.getSiteData().subscribe(
+      (res) =>{
+        this.moto = res.moto;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
   }
 
 }

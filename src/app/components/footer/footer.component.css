@@ -2,10 +2,12 @@
   background-color: #5a9bd5;
   min-height: 5vh;
   overflow: auto;
-  padding-top: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   position: fixed;
   width:100% !important;
   bottom: 0;
+  overflow: hidden;
 
 }
 .footer{
@@ -13,12 +15,20 @@
   font-weight: bold;
 }
 .footNote{
-  float: left !important;
-  margin-left: 15px;
+  /* float: left !important; */
+  position: absolute;
+  width: 99%;
+  /* margin-left: 15px;
+  margin-right: 15px; */
+  overflow: hidden;
 }
 .copyRight{
-  float: right !important;
-  margin-right: 15px;
+  /* float: right !important; */
+  position: absolute;
+  width: 99%;
+  /* margin-left: 15px;
+  margin-right: 15px; */
+  overflow: hidden;
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {

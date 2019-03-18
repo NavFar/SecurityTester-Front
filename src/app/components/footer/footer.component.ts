@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageContentService } from '../../services/page-content/page-content.service'
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   footNote:string;
-  copyRight:string;
-  constructor() {
-    this.footNote="متن زیرنویس"
-    this.copyRight="متن کپی رایت"
+  copyright:string;
+  constructor(private pageContentService : PageContentService) {
+    this.footNote="";
+    this.copyright="";
    }
 
   ngOnInit() {
+    this.pageContentService.getSiteData().subscribe(
+      (res) =>{
+        this.footNote = res.footer;
+        this.copyright = res.copyright;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
   }
 
 }
