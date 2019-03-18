@@ -34,4 +34,10 @@ export class AdminApiService {
   setLogo(logo){
       return this.http.post<any>("/api/admin/siteData/setLogo/",logo);
   }
+  getCopyright(){
+      return this.http.post<any>("/api/admin/siteData/getCopyright/",null);
+  }
+  setCopyright(copyright){
+      return this.http.post<any>("/api/admin/siteData/setCopyright/",copyright);
+  }
 }
