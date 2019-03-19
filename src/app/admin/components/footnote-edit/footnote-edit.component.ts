@@ -25,7 +25,7 @@ export class FootnoteEditComponent implements OnInit {
      this.adminApi.getFooter().subscribe(
        (res)=>{
          this.toast.success("اطلاعات دریافت شد");
-         this.show=res.show;
+         this.show=!res.show;
          this.content=res.content;
        },
        (err)=>{

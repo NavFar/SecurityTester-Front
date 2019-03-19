@@ -28,7 +28,7 @@ export class ContactUsEditComponent implements OnInit {
     this.adminApi.getContactUs().subscribe(
       (res)=>{
         this.toast.success("اطلاعات دریافت شد");
-        this.show=res.show;
+        this.show=!res.show;
         this.content=res.content;
       },
       (err)=>{

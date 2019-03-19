@@ -32,7 +32,7 @@ export class LogoEditComponent implements OnInit {
      this.adminApi.getLogo().subscribe(
        (res)=>{
          this.toast.success("اطلاعات دریافت شد");
-         this.show=res.show;
+         this.show=!res.show;
          this.url=res.url;
          this.destination=res.destination;
        },

@@ -15,9 +15,9 @@ export class CopyrightEditComponent implements OnInit {
   content:string;
   show:boolean;
   constructor(private adminApi:AdminApiService ,private toast :ToastrService ) {
-    this.copyrightEdit="ویرایش متن زیرنویس سایت";
+    this.copyrightEdit="ویرایش متن کپی رایت";
     this.submitButton = "اعمال تغییرات";
-    this.notShowCopyright="عدم نمایش متن زیرنویس";
+    this.notShowCopyright="عدم نمایش متن کپی رایت";
     this.content="";
     this.show=false;
     this.toast.info("در حال دریافت اطلاعات");
@@ -26,7 +26,7 @@ export class CopyrightEditComponent implements OnInit {
      this.adminApi.getCopyright().subscribe(
        (res)=>{
          this.toast.success("اطلاعات دریافت شد");
-         this.show=res.show;
+         this.show=!res.show;
          this.content=res.content;
        },
        (err)=>{

@@ -19,14 +19,14 @@ export class IntroductionEditComponent implements OnInit {
     this.submitButton = "اعمال تغییرات";
     this.notShowIntroduction="عدم نمایش متن معرفی سایت";
     this.content="";
-    this.show=false;
+    this.show=true;
     this.toast.info("در حال دریافت اطلاعات");
    }
    ngOnInit() {
      this.adminApi.getIntroduction().subscribe(
        (res)=>{
          this.toast.success("اطلاعات دریافت شد");
-         this.show=res.show;
+         this.show=!res.show;
          this.content=res.content;
        },
        (err)=>{
