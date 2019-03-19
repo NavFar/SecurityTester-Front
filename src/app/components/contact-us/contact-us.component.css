@@ -1,11 +1,15 @@
 .dualBoxContainer{
   width:100%;
   direction:rtl;
+  margin-bottom: 2vh;
 }
 .dualBox{
   height: 100%;
+  display: table;
   min-height: 10vh;
   margin: 2px 2px 2px 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 input[type="text"] , textarea{
   margin-top: 1vh;
@@ -21,10 +25,7 @@ input[type="text"] , textarea{
   margin-top: 1vh;
   width: 95%;
   border: 2px solid #4c6f8d;
-  max-height: 41vh;
-  height: 41vh;
-
-
+  min-height: 40vh;
 }
 input[type="checkbox"]{
   width: 15px;
@@ -55,10 +56,15 @@ button{
   border:none;
   border-radius: 5px;
   color:white;
-  height: 5vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   font-weight: bolder;
   font-size: 1.5em;
+  display: table;
   margin:4vh auto;
+}
+.mapPosition{
+  width: 95%;
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
@@ -71,8 +77,9 @@ button{
 }
 button{
   width:45%;
-  margin-left:27%;
-  margin-right:27%;
+}
+.mapPosition{
+  margin-top: 2vh;
 }
 }
 @media only screen and (min-width: 781px) {
@@ -83,8 +90,7 @@ button{
     width: 48%;
   }
   button{
-    width:30%;
-    margin-left:35%;
-    margin-right:35%;
+    width:20%;
+
   }
 }
