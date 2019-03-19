@@ -41,6 +41,11 @@ export class LoginComponent implements OnInit {
    }
 
    ngOnInit() {
+     if(this.auth.isAuthenticated())
+      {
+        this.router.navigate(['admin']);
+        return;
+      }
      this.pageContentService.getPageContent().subscribe(
        (res) =>{
          this.usernamePlaceHolder=res.usernamePlaceHolder;
