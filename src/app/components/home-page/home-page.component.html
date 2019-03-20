@@ -2,18 +2,18 @@
 <div class="ql-editor baseFontColor basicWindow introduction" [innerHtml]=introduction>
 </div>
 <div class="basicContainer" >
-  <input class="baseFontColor" type="text" [placeholder]="ipInputPlaceHolder"/>
+  <input class="baseFontColor" type="text" [placeholder]="ipInputPlaceHolder" [(ngModel)]="siteAdress"/>
 </div>
 <div class="basicContainer  baseFontColor" >
   <div class="checkBoxContainer">
-    <re-captcha class="notBotContainer" (resolved)="resolved($event)" ></re-captcha>
+    <re-captcha class="notBotContainer"  [(ngModel)]="recaptcha" ></re-captcha>
     <div class="exposeContainer">
-      <input type="checkbox"/>
+      <input type="checkbox" [(ngModel)]="expose" />
        {{exposeText}}
     </div>
 </div>
 </div>
-<div class="buttonContainer">
+<div class="buttonContainer" (click)="submit()">
 <button>
   {{test}}
 </button>

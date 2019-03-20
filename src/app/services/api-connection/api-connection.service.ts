@@ -9,4 +9,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class ApiConnectionService {
 
   constructor(private http: HttpClient){}
+  sendTestRequest(data):Observable<any>
+  {
+    return this.http.post<any>("/api/App/test/new",data);
+  }
 }

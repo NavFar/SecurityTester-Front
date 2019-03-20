@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageContentService } from '../../services/page-content/page-content.service'
+import { ApiConnectionService } from '../../services/api-connection/api-connection.service'
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -10,7 +12,10 @@ export class HomePageComponent implements OnInit {
   introduction:string;
   exposeText:string;
   test:string;
-  constructor(private pageContentService : PageContentService) {
+  siteAdress:string;
+  recaptcha:string;
+  expose:boolean;
+  constructor(private pageContentService : PageContentService,private apiConnection:ApiConnectionService) {
       this.ipInputPlaceHolder="";
       this.introduction="";
       this.exposeText="";
@@ -37,8 +42,15 @@ export class HomePageComponent implements OnInit {
       }
     );
   }
-  resolved($event){
-    console.log(event);
+  submit(){
+    this.apiConnection.sendTestRequest({
+      address:this.siteAdress,
+      recaptcha:this.recaptcha,
+      expose:this.expose
+    }).subscribe(
+      (res)=>{},
+      (err)=>{}
+    );
   }
 
 }
