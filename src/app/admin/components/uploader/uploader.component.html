@@ -2,9 +2,8 @@
   {{uploaderTitle}}
 </div>
 <div class="container">
-
-<div class="dropZone" (mouseover)="temp()" (dragover)="dragover($event)" (drop)="drop($event)">
-  <input id="file" type="file" >
+<div class="dropZone" (dragover)="dragover($event)" (drop)="drop($event)">
+  <input id="file" type="file" (change)="fileReader($event.target.files)" [(ngModel)]="fileHtml" >
   <div class="deepIn">
   <span>{{dragText}}</span>
   <label for="file">
@@ -21,6 +20,16 @@
     <div class="progressBarValue">
       {{value}}%
     </div>
+</div>
+<div class="box">
+  {{uploadPlace}}
+  <div class="basePath">
+  {{basePath}}
+  </div>
+</div>
+<div class="box">
+  <input [(ngModel)]="override" type="checkbox"/>
+  {{allowOverrider}}
 </div>
 <div class="dirTreeContainer" >
 <tree-root [nodes]="nodes" [options]="options" ></tree-root>

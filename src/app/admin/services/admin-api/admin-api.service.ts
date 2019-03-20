@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { tap,map,last,catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +62,15 @@ export class AdminApiService {
   }
   getDirectoryContent(){
       return this.http.post<any>("/api/admin/uploader/getDirectoryContent/",null);
+  }
+  uploadFile(file){
+    const req = new HttpRequest('POST', "/api/admin/uploader/upload/", file, {
+    reportProgress: true
+  });
+    return this.http.request(req).pipe(
+      catchError((err)=>{
+        return throwError(err);
+      })
+    );
   }
 }
