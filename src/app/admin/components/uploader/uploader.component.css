@@ -88,3 +88,10 @@ span{
   width: 96%;
   margin-left: 2%;
 }
+.dirTreeContainer{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border:2px solid #5a9bd5;
+  font-size: 0.8em;
+  padding:1vh 1vw 1vh 1vw;
+}

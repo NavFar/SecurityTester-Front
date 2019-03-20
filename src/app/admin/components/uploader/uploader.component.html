@@ -18,9 +18,11 @@
   <div class="progressBar" [style.width.%]="value">
   </div>
 </div>
-
     <div class="progressBarValue">
       {{value}}%
     </div>
+</div>
+<div class="dirTreeContainer" >
+<tree-root [nodes]="nodes" [options]="options" ></tree-root>
 </div>
 </div>

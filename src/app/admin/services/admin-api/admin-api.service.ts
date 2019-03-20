@@ -58,4 +58,7 @@ export class AdminApiService {
   setContactUs(contactUs){
       return this.http.post<any>("/api/admin/siteData/setContactUs/",contactUs);
   }
+  getDirectoryContent(){
+      return this.http.post<any>("/api/admin/uploader/getDirectoryContent/",null);
+  }
 }
