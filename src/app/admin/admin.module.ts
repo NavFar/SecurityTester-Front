@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { QuillModule } from 'ngx-quill';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-
+import { TreeModule } from 'angular-tree-component';
 import { AdminRoutingModule } from './admin-routing.module';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -51,6 +51,7 @@ import { UserComponent } from './components/user/user.component';
     AdminRoutingModule,
     FontAwesomeModule,
     QuillModule,
+    TreeModule.forRoot(),
   ]
 })
 export class AdminModule { }
