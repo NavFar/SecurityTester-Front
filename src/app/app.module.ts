@@ -21,6 +21,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MotoComponent } from './components/moto/moto.component';
 import { QuestionComponent } from './components/question/question.component';
+import { ResultComponent } from './components/result/result.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -37,6 +38,7 @@ export function tokenGetter() {
     AboutUsComponent,
     MotoComponent,
     QuestionComponent,
+    ResultComponent,
 
   ],
   imports: [
