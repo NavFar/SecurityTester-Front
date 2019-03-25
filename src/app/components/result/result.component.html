@@ -1,1 +1,83 @@
-{{result}}
+<app-moto></app-moto>
+<div class="title">
+  {{testOverviewTitle}}
+</div>
+<div class="overviewContainer container">
+  <div class="overal" *ngIf="testResult">
+    <div class="overalRow">{{hostLabel}} : <span>{{testResult?.url}}</span></div>
+    <div class="overalRow">{{testIdLabel}} : <span>{{testResult?._id}}</span></div>
+    <div class="overalRow">{{startTimeLabel}} : <span>{{testResult?.start| date:'medium'}}</span></div>
+    <div class="overalRow">{{endTimeLabel}} : <span>{{testResult?.end | date:'medium'}}</span></div>
+    <div class="overalRow">{{score}} : <span>{{testsScore}}</span></div>
+    <div class="overalRow">{{successfullTestsLabel}} : <span>{{passedTests}}</span></div>
+  </div>
+  <div class="colorIndicator">
+    <div class="indicator" [class.red]="testsScore < 25"
+    [ngClass]="{
+            'blue' : 'testsScore' > 75,
+            'green' : 50<'testsScore' < 75,
+            'yellow': 25<'testsScore' < 50,
+            'red':'testsScore' < 25
+         }"
+         >
+      <!-- {{qualityLevel}} -->
+      </div>
+  </div>
+</div>
+
+  <div class="title">
+    {{testScores}}
+  </div>
+  <div class="container">
+    <table>
+        <colgroup>
+      <col class="describtionCol"/>
+      <col class="scoreCol"/>
+      <col class="testStatusCol"/>
+      <col class="testTiltleCol"/>
+        </colgroup>
+    <tr>
+      <th >{{describtion}}</th>
+      <th >{{score}}</th>
+      <th >{{testStatus}}</th>
+     <th >{{testTiltle}}</th>
+    </tr>
+    <tr  *ngFor="let test of testResult?.pendingOn">
+      <td>{{test.describtion}}</td>
+      <td>{{test.score}}</td>
+      <td *ngIf="test.status==-1">{{error}}</td>
+      <td *ngIf="test.status==0">{{pending}}</td>
+      <td *ngIf="test.status==1">{{finished}}</td>
+      <td>{{test.name}}</td>
+    </tr>
+    </table>
+  </div>
+    <div *ngFor="let test of testResult?.pendingOn">
+      <div class="title">
+      {{test.name}}
+    </div>
+    <div class="container">
+      <table>
+          <colgroup>
+            <col class="describtionCol"/>
+            <col class="scoreCol"/>
+            <col class="testPass"/>
+            <col class="testTiltleCol"/>
+          </colgroup>
+          <tr>
+          <th >{{describtion}}</th>
+          <th >{{score}}</th>
+          <th >{{testStatus}}</th>
+         <th >{{partTitle}}</th>
+      </tr>
+      <tr  *ngFor="let part of test.result?.parts">
+        <td>{{part.desc}}</td>
+        <td>{{part.score}}</td>
+        <td *ngIf="part.pass">{{pass}}</td>
+        <td *ngIf="!part.pass">{{fail}}</td>
+        <td>{{part.name}}</td>
+      </tr>
+      </table>
+    </div>
+</div>
+<!-- {{result}} -->

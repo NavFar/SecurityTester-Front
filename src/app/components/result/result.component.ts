@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WebSocketService } from '../../services/web-socket/web-socket.service'
+import { PageContentService } from '../../services/page-content/page-content.service'
 import { ResultService } from '../../services/result/result.service'
 
 @Component({
@@ -10,34 +11,102 @@ import { ResultService } from '../../services/result/result.service'
 })
 export class ResultComponent implements OnInit,OnDestroy {
   result:string;
-  constructor(private resultService:ResultService,private activeRoute: ActivatedRoute,private websocket:WebSocketService) {
-    console.log("constructor");
+  testOverviewTitle:string;
+  qualityLevel:string;
+  hostLabel:string;
+  testIdLabel:string;
+  startTimeLabel:string;
+  endTimeLabel:string;
+  successfullTestsLabel:string;
+  pending:string;
+  finished:string;
+  error:string;
+  testScores:string;
+  testTiltle:string;
+  testStatus:string;
+  score:string;
+  partTitle:string;
+  describtion:string;
+  pass:string;
+  fail:string;
+  testResult;
+  passedTests:number;
+  testsScore:number;
+  constructor(private resultService:ResultService,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
   }
 
   ngOnInit() {
+    this.passedTests=0;
+    this.testsScore=0;
+    this.pageContentService.getPageContent().subscribe(
+      (res) =>{
+        this.testOverviewTitle=res.testOverviewTitle;
+        this.qualityLevel =res.qualityLevel;
+        this.hostLabel =res.hostLabel;
+        this.testIdLabel =res.testIdLabel;
+        this.startTimeLabel =res.startTimeLabel;
+        this.endTimeLabel =res.endTimeLabel;
+        this.successfullTestsLabel =res.successfullTestsLabel;
+        this.testScores = res.testScores;
+        this.testTiltle=res.testTiltle;
+        this.testStatus=res.testStatus;
+        this.score=res.score;
+        this.describtion=res.describtion;
+        this.pending=res.pending;
+        this.finished=res.finished;
+        this.error=res.error;
+        this.pass=res.pass;
+        this.fail=res.fail;
+        this.partTitle=res.partTitle;
+      },
+      (err) =>{
+        console.log("cant get values sorry");
+      }
+    );
     let id = this.activeRoute.snapshot.paramMap.get('id');
     this.resultService.getResult({id:id}).subscribe(
       (res)=>{
-        this.result = res;
-        this.websocket.serverSocket(id).subscribe(
-          (sres)=>{
-            console.log(sres)
-            this.result =sres.results;
-          },
-          (serr)=>{
-            console.log(serr);
-          }
-        );
+        this.testResult = res;
+        this.updateScores();
+        console.log(res)
+
       },
       (err)=>{
 
       }
     );
-    console.log(id)
+    this.websocket.serverSocket(id).subscribe(
+      (sres)=>{
+        this.testResult =sres;
+        this.updateScores();
+      },
+      (serr)=>{
+
+        console.log(serr);
+      }
+    );
   }
   ngOnDestroy(){
-    console.log("destroyed");
-    // this.websocket.getSocket().unsubscribe();
     this.websocket.closeUserSocket();
+  }
+  updateScores(){
+    let countedTests=0;
+    let sum=0;
+    this.passedTests=0;
+    for(let i=0;i<this.testResult.pendingOn.length;i++){
+      if(this.testResult.pendingOn[i].status==1){
+      if(this.testResult.pendingOn[i].score)
+        {
+        countedTests++;
+        sum+=Number(this.testResult.pendingOn[i].score);
+        }
+      if(this.testResult.pendingOn[i].pass)
+        {
+        this.passedTests++;
+        }
+      }
+    }
+    this.testsScore=sum/countedTests;
+    console.log(sum)
   }
 }

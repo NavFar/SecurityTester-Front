@@ -1,0 +1,99 @@
+.title{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: white;
+  background-color: #5a9bd5;
+  padding: 2vh 4vw 2vh 4vw ;
+  margin-top: 2vh;
+
+}
+.container{
+  border: 2px solid #4b6f91;
+}
+.overviewContainer{
+  display: flex;
+  display: 100%;
+  display: rtl;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.overal{
+  width: 65%;
+  border-right: 2px solid #4b6f91;
+
+}
+.colorIndicator{
+  width: 35%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.indicator{
+  display: table;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  line-height: 200px;
+}
+.blue{
+  background-color: blue;
+}
+.green{
+  background-color: green;
+}
+.yellow{
+  background-color: yellow;
+}
+.red{
+  background-color: red;
+}
+.overalRow{
+  direction: rtl;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 1em;
+}
+.overalRow span{
+  direction: ltr!important;
+}
+.overalRow:nth-child(even){
+  background-color: #deeaf6;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+  /* direction: rtl; */
+  font-size: 2vh;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td th{
+  text-align: center;
+  vertical-align: middle;
+}
+tr:nth-child(even){
+  background-color: #deeaf6;
+}
+.scoreCol{
+  width:10%;
+}
+.testStatusCol{
+  width:10%;
+}
+.testTiltleCol{
+  width:30%;
+}
+.describtionCol{
+  width:50%;
+}
+.testPass{
+  width:10%;
+}
