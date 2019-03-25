@@ -1,3 +1,20 @@
-<p>
-  recent-results works!
-</p>
+<app-moto></app-moto>
+<div class="title">
+  {{recentResults}}
+</div>
+<div class="container">
+  <table>
+      <colgroup>
+        <col class="dateCol"/>
+        <col class="urlCol"/>
+      </colgroup>
+      <tr>
+      <th >{{testDate}}</th>
+      <th >{{targetUrl}}</th>
+  </tr>
+  <tr  class="data"  *ngFor="let result of results" (click)="click(result._id)">
+    <td>{{result.end | jalali | persianNumber}}</td>
+    <td>{{result.url}}</td>
+  </tr>
+  </table>
+</div>

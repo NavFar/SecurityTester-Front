@@ -1,0 +1,39 @@
+.title{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: white;
+  background-color: #5a9bd5;
+  padding: 2vh 4vw 2vh 4vw ;
+  margin-top: 2vh;
+}
+.dateCol{
+  width: 40%
+}
+.urlCol{
+  width: 60;
+}
+.container{
+  border: 2px solid #4b6f91;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+  /* direction: rtl; */
+  font-size: 2vh;
+  text-align: center;
+  vertical-align: middle;
+}
+th:hover{
+
+}
+td th{
+  text-align: center;
+  vertical-align: middle;
+}
+tr:nth-child(even){
+  background-color: #deeaf6;
+}
+.data:hover{
+  background-color: #838384;
+}
