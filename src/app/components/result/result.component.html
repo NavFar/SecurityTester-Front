@@ -6,10 +6,10 @@
   <div class="overal" *ngIf="testResult">
     <div class="overalRow">{{hostLabel}} : <span>{{testResult?.url}}</span></div>
     <div class="overalRow">{{testIdLabel}} : <span>{{testResult?._id}}</span></div>
-    <div class="overalRow">{{startTimeLabel}} : <span>{{testResult?.start| date:'medium'}}</span></div>
-    <div class="overalRow">{{endTimeLabel}} : <span>{{testResult?.end | date:'medium'}}</span></div>
-    <div class="overalRow">{{score}} : <span>{{testsScore}}</span></div>
-    <div class="overalRow">{{successfullTestsLabel}} : <span>{{passedTests}}</span></div>
+    <div class="overalRow">{{startTimeLabel}} : <span>{{testResult?.start| jalali | persianNumber}}</span></div>
+    <div class="overalRow">{{endTimeLabel}} : <span>{{testResult?.end | jalali | persianNumber}}</span></div>
+    <div class="overalRow">{{score}} : <span>{{testsScore | persianNumber}}</span></div>
+    <div class="overalRow">{{successfullTestsLabel }} : <span>{{passedTests| persianNumber}}</span></div>
   </div>
   <div class="colorIndicator">
     <div class="indicator" [class.red]="testsScore < 25"
@@ -44,10 +44,10 @@
     </tr>
     <tr  *ngFor="let test of testResult?.pendingOn">
       <td>{{test.describtion}}</td>
-      <td>{{test.score}}</td>
-      <td *ngIf="test.status==-1">{{error}}</td>
-      <td *ngIf="test.status==0">{{pending}}</td>
-      <td *ngIf="test.status==1">{{finished}}</td>
+      <td>{{test.score||0 | persianNumber}}</td>
+      <td *ngIf="test.status==-1" class="error">{{error}}</td>
+      <td *ngIf="test.status==0" class="pending">{{pending}}</td>
+      <td *ngIf="test.status==1" class="finished">{{finished}}</td>
       <td>{{test.name}}</td>
     </tr>
     </table>
@@ -66,15 +66,15 @@
           </colgroup>
           <tr>
           <th >{{describtion}}</th>
-          <th >{{score}}</th>
+          <th >{{score }}</th>
           <th >{{testStatus}}</th>
          <th >{{partTitle}}</th>
       </tr>
       <tr  *ngFor="let part of test.result?.parts">
         <td>{{part.desc}}</td>
-        <td>{{part.score}}</td>
-        <td *ngIf="part.pass">{{pass}}</td>
-        <td *ngIf="!part.pass">{{fail}}</td>
+        <td>{{part.score| persianNumber}}</td>
+        <td *ngIf="part.pass" class="finished">{{pass}}</td>
+        <td *ngIf="!part.pass" class="error">{{fail}}</td>
         <td>{{part.name}}</td>
       </tr>
       </table>

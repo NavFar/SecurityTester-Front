@@ -97,3 +97,15 @@ tr:nth-child(even){
 .testPass{
   width:10%;
 }
+.error{
+  background-color: red;
+  color:white;
+}
+.pending{
+  background-color: orange;
+  color:white;
+}
+.finished{
+  background-color: green;
+  color:white;
+}

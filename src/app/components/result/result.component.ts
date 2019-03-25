@@ -68,11 +68,10 @@ export class ResultComponent implements OnInit,OnDestroy {
       (res)=>{
         this.testResult = res;
         this.updateScores();
-        console.log(res)
 
       },
       (err)=>{
-
+        console.log("cant get values sorry");
       }
     );
     this.websocket.serverSocket(id).subscribe(
@@ -81,8 +80,7 @@ export class ResultComponent implements OnInit,OnDestroy {
         this.updateScores();
       },
       (serr)=>{
-
-        console.log(serr);
+        console.log("cant get values sorry");
       }
     );
   }
@@ -106,7 +104,9 @@ export class ResultComponent implements OnInit,OnDestroy {
         }
       }
     }
-    this.testsScore=sum/countedTests;
-    console.log(sum)
+    if(countedTests==0)
+      this.testsScore=0;
+    else
+      this.testsScore=sum/countedTests;
   }
 }
