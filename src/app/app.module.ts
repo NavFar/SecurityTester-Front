@@ -22,6 +22,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MotoComponent } from './components/moto/moto.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
+import { RecentResultsComponent } from './components/recent-results/recent-results.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -39,6 +40,7 @@ export function tokenGetter() {
     MotoComponent,
     QuestionComponent,
     ResultComponent,
+    RecentResultsComponent,
 
   ],
   imports: [

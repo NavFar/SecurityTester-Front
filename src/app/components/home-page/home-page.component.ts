@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PageContentService } from '../../services/page-content/page-content.service'
 import { ApiConnectionService } from '../../services/api-connection/api-connection.service'
 
@@ -15,11 +16,12 @@ export class HomePageComponent implements OnInit {
   siteAdress:string;
   recaptcha:string;
   expose:boolean;
-  constructor(private pageContentService : PageContentService,private apiConnection:ApiConnectionService) {
+  constructor(private pageContentService : PageContentService,private apiConnection:ApiConnectionService,private router:Router) {
       this.ipInputPlaceHolder="";
       this.introduction="";
       this.exposeText="";
       this.test="";
+      this.expose=false;
    }
 
   ngOnInit() {
@@ -43,14 +45,22 @@ export class HomePageComponent implements OnInit {
     );
   }
   submit(){
+
+    console.log(this.expose)
     this.apiConnection.sendTestRequest({
       address:this.siteAdress,
       recaptcha:this.recaptcha,
       expose:this.expose
     }).subscribe(
-      (res)=>{},
-      (err)=>{}
+      (res)=>{
+        this.router.navigate(['/result',res]);
+        console.log(res);
+      },
+      (err)=>{
+        console.log(err);
+      }
     );
+  // this.WebSocket.connect("")
   }
 
 }
