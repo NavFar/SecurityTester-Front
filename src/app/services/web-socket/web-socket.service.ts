@@ -10,7 +10,6 @@ export class WebSocketService {
     this.subject=null;
   }
   serverSocket(id){
-    console.log("-- "+id)
     if(!this.subject){
       this.subject = webSocket("wss://"+window.location.href.split("/")[2]+"/api/App/result/progress?id="+id);
     }
