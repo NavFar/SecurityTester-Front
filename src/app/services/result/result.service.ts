@@ -11,4 +11,7 @@ export class ResultService {
   getResult(data):Observable<any>{
       return this.http.post<any>("/api/App/result/",data);
   }
+  getRecentResults():Observable<any>{
+      return this.http.post<any>("/api/App/result/recent",null);
+  }
 }
