@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { JalaliPipe } from './pipes/jalali/jalali.pipe';
 
 // import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { MotoComponent } from './components/moto/moto.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
 import { RecentResultsComponent } from './components/recent-results/recent-results.component';
+import { PersianNumberPipe } from './pipes/persian-number/persian-number.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -41,6 +43,8 @@ export function tokenGetter() {
     QuestionComponent,
     ResultComponent,
     RecentResultsComponent,
+    JalaliPipe,
+    PersianNumberPipe,
 
   ],
   imports: [
@@ -62,7 +66,6 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:3000'],
       }
     }),
-
     // AdminModule
   ],
   providers: [
