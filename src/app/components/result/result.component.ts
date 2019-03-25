@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { WebSocketService } from '../../services/web-socket/web-socket.service'
 import { PageContentService } from '../../services/page-content/page-content.service'
 import { ResultService } from '../../services/result/result.service'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-result',
@@ -32,7 +33,8 @@ export class ResultComponent implements OnInit,OnDestroy {
   testResult;
   passedTests:number;
   testsScore:number;
-  constructor(private resultService:ResultService,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
+  notFound:string;
+  constructor(private toast:ToastrService,private resultService:ResultService,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
   }
 
   ngOnInit() {
@@ -58,6 +60,7 @@ export class ResultComponent implements OnInit,OnDestroy {
         this.pass=res.pass;
         this.fail=res.fail;
         this.partTitle=res.partTitle;
+        this.notFound=res.notFound;
       },
       (err) =>{
         console.log("cant get values sorry");
@@ -71,6 +74,8 @@ export class ResultComponent implements OnInit,OnDestroy {
 
       },
       (err)=>{
+        if(err.status==404)
+        return this.toast.error(this.notFound);
         console.log("cant get values sorry");
       }
     );
