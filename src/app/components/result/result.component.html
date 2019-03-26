@@ -9,17 +9,14 @@
     <div class="overalRow">{{testIdLabel}} : <span>{{testResult?._id}}</span></div>
     <div class="overalRow">{{startTimeLabel}} : <span>{{testResult?.start| jalali | persianNumber}}</span></div>
     <div class="overalRow">{{endTimeLabel}} : <span>{{testResult?.end | jalali | persianNumber}}</span></div>
-    <div class="overalRow">{{score}} : <span>{{testsScore | persianNumber}}</span></div>
+    <div class="overalRow">{{score}} : <span>{{testsScore| number:'1.0-2' | persianNumber}}</span></div>
     <div class="overalRow">{{successfullTestsLabel }} : <span>{{passedTests| persianNumber}}</span></div>
   </div>
   <div class="colorIndicator">
-    <div class="indicator" [class.red]="testsScore < 25"
-    [ngClass]="{
-            'blue' : 'testsScore' > 75,
-            'green' : 50<'testsScore' < 75,
-            'yellow': 25<'testsScore' < 50,
-            'red':'testsScore' < 25
-         }"
+    <div class="indicator" [class.blue]="15 < testsScore "
+                           [class.green]=" testsScore < 15"
+                           [class.yellow]=" testsScore < 10"
+                           [class.red]="testsScore < 5"
          >
       <!-- {{qualityLevel}} -->
       </div>
@@ -45,7 +42,7 @@
     </tr>
     <tr  *ngFor="let test of testResult?.pendingOn">
       <td>{{test.describtion}}</td>
-      <td>{{test.score||0 | persianNumber}}</td>
+      <td>{{test.score||0 | number:'1.0-2' | persianNumber}}</td>
       <td *ngIf="test.status==-1" class="error">{{error}}</td>
       <td *ngIf="test.status==0" class="pending">{{pending}}</td>
       <td *ngIf="test.status==1" class="finished">{{finished}}</td>
@@ -73,7 +70,7 @@
       </tr>
       <tr  *ngFor="let part of test.result?.parts">
         <td>{{part.desc}}</td>
-        <td>{{part.score| persianNumber}}</td>
+        <td>{{part.score | number:'1.0-2'| persianNumber}}</td>
         <td *ngIf="part.pass" class="finished">{{pass}}</td>
         <td *ngIf="!part.pass" class="error">{{fail}}</td>
         <td>{{part.name}}</td>
