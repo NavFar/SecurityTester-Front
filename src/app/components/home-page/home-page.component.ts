@@ -21,12 +21,15 @@ export class HomePageComponent implements OnInit {
   noCaptcha:string;
   badUrl:string;
   badCaptcha:string;
+  enable:boolean;
+  waiting:string;
   constructor(private pageContentService : PageContentService,private apiConnection:ApiConnectionService,private router:Router,private toast :ToastrService) {
       this.ipInputPlaceHolder="";
       this.introduction="";
       this.exposeText="";
       this.test="";
       this.expose=false;
+      this.enable= true;
    }
 
   ngOnInit() {
@@ -39,6 +42,7 @@ export class HomePageComponent implements OnInit {
         this.noCaptcha=res.noCaptcha;
         this.badUrl=res.badUrl;
         this.badCaptcha=res.badCaptcha;
+        this.waiting = res.waiting;
       },
       (err) =>{
         console.log("cant get values sorry");
@@ -65,15 +69,19 @@ export class HomePageComponent implements OnInit {
     }
     if(flag)
       return;
+    this.enable=false;
+    this.toast.info('',this.waiting);
     this.apiConnection.sendTestRequest({
       address:this.siteAdress,
       recaptcha:this.recaptcha,
       expose:this.expose
     }).subscribe(
       (res)=>{
+        this.enable=true;
         return this.router.navigate(['/result',res]);
       },
       (err)=>{
+        this.enable=true;
         this.recaptcha="";
         if(err.status==400)
         return this.toast.error(this.badUrl);
@@ -82,7 +90,6 @@ export class HomePageComponent implements OnInit {
         return console.log("cant get values sorry");
       }
     );
-  // this.WebSocket.connect("")
   }
 
 }

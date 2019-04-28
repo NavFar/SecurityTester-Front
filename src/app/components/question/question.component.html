@@ -2,17 +2,18 @@
 <div class="title" (click)="toggle()">
   {{title}}
 </div>
-<div class="qa" [ngClass]="flag ? 'open':''">
+<div class="qa" [class.open]="flag">
 <div class="question" >
   <div class="header">
     {{questionTitle}}:
-</div>  {{question}}
+</div>
+<div class="ql-editor" [innerHtml]="question | safeHtml"></div>
 </div>
 <div class="answer">
   <div class="header">
     {{answerTitle}}:
 </div>
-  {{answer}}
+<div class="ql-editor" [innerHtml]="answer | safeHtml"></div>
 </div>
 </div>
 </div>

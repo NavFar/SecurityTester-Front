@@ -23,7 +23,7 @@ input[type="text"] , textarea{
 }
 .contactUs{
   margin-top: 1vh;
-  width: 95%;
+  width: 100%;
   border: 2px solid #4c6f8d;
   min-height: 40vh;
 }
@@ -64,7 +64,41 @@ button{
   margin:4vh auto;
 }
 .mapPosition{
-  width: 95%;
+  /* display: inline-block; */
+  /* width: 95%; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5em;
+}
+agm-map {
+  height: 200px;
+}
+.maps{
+  direction: ltr;
+  /* display: inline-table; */
+  width: 70%;
+}
+.mapsPart{
+  display: flex;
+  justify-content: space-around;
+  /* align-items: stretch; */
+  text-align: center;
+  flex-wrap: wrap;
+}
+.recaptchaBox{
+  display: flex;
+  justify-content: space-around;
+}
+.star{
+  position: absolute;
+  right: -2%;
+  top:40%;
+  color: red;
+}
+.fields{
+  position: relative;
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {

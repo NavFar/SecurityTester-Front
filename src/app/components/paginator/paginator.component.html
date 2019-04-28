@@ -1,0 +1,3 @@
+<div class="paginatorContainer">
+  <div *ngFor="let item of arrayOne()" class="pageNumber" [class.currentPage]="item==currentPage" (click)="pageChang(item)">{{item}}</div>
+</div>

@@ -1,5 +1,5 @@
 <div class="container">
-  <button *ngFor="let link of links">
+  <button *ngFor="let link of links" [routerLink]="['/admin',{ outlets: { adminRouter: [link.link]} }]">
       {{link.name}}
   </button>
 </div>

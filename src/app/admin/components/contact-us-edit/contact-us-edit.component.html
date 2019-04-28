@@ -5,8 +5,15 @@
 <quill-editor [(ngModel)]="content"  [style]="{height: '40vh'}"></quill-editor>
 </div>
 <div class="box">
-  <label for="location">{{location}}</label>
-  <input type="text" name="location">
+  <div>
+    <label for="lat">{{locationLat}}</label>
+    <input type="text" name="lat" [(ngModel)]="lat">
+  </div>
+  <div>
+  <label for="lng">{{locationLng}}</label>
+  <input type="text" name="lng" [(ngModel)]="lng">
+  </div>
+
 </div>
 <div class="box">
   <input [(ngModel)]="show" type="checkbox"/>

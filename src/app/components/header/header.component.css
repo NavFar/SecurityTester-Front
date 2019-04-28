@@ -13,17 +13,22 @@
   color: white;
 }
 .logoLink{
-  position: absolute;
+  /* position: absolute; */
+  z-index: 10000;
 }
 .logo{
   float:left;
   height: 14vh !important;
   margin-top: -3.5vh;
   margin-left: 10px;
-  border-radius: 50%;
   width: 14vh;
+  border :2px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 100000;
 }
 .language{
+
   color: white;
   position: absolute;
   left: 0;
@@ -40,6 +45,7 @@
   right: 1px;
   direction: rtl;
   width:100%;
+  width:calc(100% - 14vh);
 }
 .links{
   color:#5a9bd5;

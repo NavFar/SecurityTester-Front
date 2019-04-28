@@ -1,0 +1,35 @@
+<div class="overalContainer">
+<div class="title">
+  همه‌ی ارزیابی ها
+</div>
+<div class="container">
+  <table>
+      <colgroup>
+        <col class="dateCol"/>
+        <col class="exposeCol"/>
+        <col class="scoreCol"/>
+        <col class="urlCol"/>
+      </colgroup>
+      <tr>
+      <th >تاریخ و زمان ارزیابی</th>
+      <th>وضعیت انتشار</th>
+      <th>امتیاز</th>
+      <th >نام دامنه هدف</th>
+  </tr>
+  <tr  class="data"  *ngFor="let result of results" (click)="click(result._id)">
+    <td>{{result.end | jalali | persianNumber}}</td>
+    <ng-template [ngIf]="result.expose" [ngIfElse]="noExpose">
+      <td style="color:green;">مجازشده</td>
+    </ng-template>
+    <ng-template #noExpose>
+      <td style="color:red;">غیرمجاز</td>
+    </ng-template>
+    <td>{{result.score ||0 | number:'1.0-2' | persianNumber}}</td>
+    <td>{{result.url}}</td>
+  </tr>
+  </table>
+  <div class="paginator">
+    <shared-paginator [currentPage]="currPage" [range]="10" [max]="maxPages" (pageChanged)="pageChanged($event)"></shared-paginator>
+  </div>
+</div>
+</div>

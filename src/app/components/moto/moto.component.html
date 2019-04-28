@@ -1,2 +1,2 @@
-<div class="ql-editor baseFontColor basicWindow moto" [innerHtml]="moto">
+<div class="ql-editor baseFontColor basicWindow moto" *ngIf="moto" [innerHtml]="moto | safeHtml" >
 </div>

@@ -6,16 +6,19 @@
   background-color: #5a9bd5;
   padding: 2vh 4vw 2vh 4vw ;
   margin-top: 2vh;
-
 }
 .container{
   border: 2px solid #4b6f91;
+}
+.recommendationContainer{
+  border: 2px solid #587f3d;
 }
 .overviewContainer{
   display: flex;
   display: 100%;
   display: rtl;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
+  font-size: 2vh;
   font-weight: bold;
 }
 
@@ -30,7 +33,9 @@
   padding-bottom: 2vh;
 }
 .indicator{
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -39,18 +44,22 @@
   color: white;
   vertical-align: middle;
   line-height: 200px;
-}
-.blue{
-  background-color: blue;
+  font-size: 3vh;
 }
 .green{
-  background-color: green;
+  background-color: #70bf44;
+}
+.blue{
+  background-color: #46c6e7;
 }
 .yellow{
-  background-color: yellow;
+  background-color: #efe943;
+}
+.orange{
+  background-color: #ee582b;
 }
 .red{
-  background-color: red;
+  background-color: #ff0000;
 }
 .overalRow{
   direction: rtl;
@@ -63,14 +72,15 @@
 .overalRow span{
   direction: ltr!important;
 }
-.overalRow:nth-child(even){
-  background-color: #deeaf6;
+.recommendationContainer tr:nth-child(even){
+  background-color: #c6ffcc;
 }
 table{
   width: 100%;
   table-layout: fixed;
   /* direction: rtl; */
   font-size: 2vh;
+
   text-align: center;
   vertical-align: middle;
 }
@@ -91,8 +101,52 @@ tr:nth-child(even){
 .testTiltleCol{
   width:30%;
 }
+.downloadCol{
+  width: 10%;
+}
+.recommendationCol{
+  width: 60%;
+}
+.passStatusCol{
+  width: 10%;
+}
+.fullDescCol{
+  width: 6%;
+}
 .describtionCol{
-  width:50%;
+  width:34%;
+}
+.passStatus{
+  width: 10%;
+}
+.fullDescData{
+  position: relative;
+}
+.tooltip{
+  visibility: hidden;
+  position: absolute;
+  min-width: 100%;
+  min-height: 4vh;
+  background-color: black;
+  padding: 5px 7px 5px 7px;
+  border-radius: 6px;
+  color: #fff;
+  z-index: 1;
+  left: 110%;
+  top:0;
+}
+.fullDescData .tooltip::after{
+  content: "";
+  position: absolute;
+  top: 2vh;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.fullDescData:hover .tooltip {
+  visibility: visible;
 }
 .testPass{
   width:10%;
@@ -108,4 +162,40 @@ tr:nth-child(even){
 .finished{
   background-color: green;
   color:white;
+}
+.info{
+  cursor: pointer;
+  font-size: 1.5em;
+}
+.recommendation{
+  background-color: #70ad46;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+@media only screen and (max-width: 780px) {
+
+.scoreCol{
+  width:10%;
+}
+.testStatusCol{
+  width:12%;
+}
+.testTiltleCol{
+  width:30%;
+}
+.passStatusCol{
+  width: 12%;
+}
+.fullDescCol{
+  display:none;
+}
+.fullDescData{
+  display:none;
+}
+.describtionCol{
+  width:30%;
+}
+
 }

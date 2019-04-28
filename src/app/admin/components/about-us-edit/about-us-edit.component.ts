@@ -21,6 +21,7 @@ export class AboutUsEditComponent implements OnInit {
     this.content="";
     this.show=true;
     this.toast.info("در حال دریافت اطلاعات");
+    
    }
   ngOnInit() {
     this.adminApi.getAboutUs().subscribe(

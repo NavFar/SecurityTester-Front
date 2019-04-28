@@ -1,6 +1,6 @@
 <div class="background footer">
-  <div class="ql-editor footNote" [innerHtml]="footNote">
+  <div class="ql-editor footNote" [innerHtml]="footNote | safeHtml">
   </div>
-  <div class="ql-editor copyRight" [innerHtml]="copyright">
+  <div class="ql-editor copyRight" [innerHtml]="copyright | safeHtml">
   </div>
 </div>

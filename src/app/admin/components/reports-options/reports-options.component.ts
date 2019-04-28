@@ -11,7 +11,7 @@ export class ReportsOptionsComponent implements OnInit {
   constructor() {
     this.links=[
       {link:'',name:'ویرایش صفحه گزارش'},
-      {link:'',name:'مشاهده ارزیابی های انجام شده'},
+      {link:'allResults',name:'مشاهده ارزیابی های انجام شده'},
     ];
    }
 

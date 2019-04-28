@@ -14,7 +14,7 @@ export class SiteOptionsDashboardComponent implements OnInit {
       {name:"متن کپی رایت",link:"copyrightEdit"},
       {name:"متن زیرنویس",link:"footnoteEdit"},
       {name:"مدیریت کاربران",link:""},
-      {name:"مدیریت سوالات رایج",link:""},
+      {name:"مدیریت سوالات رایج",link:"faqList"},
       {name:"درباره ما",link:"aboutUsEdit"},
       {name:"تماس و پشتیبانی",link:"contactUsEdit"}
     ];

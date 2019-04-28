@@ -1,11 +1,12 @@
 <div class="background">
-
-  <a class="logoLink" [href]="destination"><img *ngIf="logo" [src]="logo" class="logo"/></a>
-  <div class="ql-editor title" [innerHtml]="siteTitle">
+  <div>
+  <a class="logoLink" [href]="destination"><div><img *ngIf="logo" [src]="logo" class="logo"/></div></a>
+  <div class="ql-editor title" [innerHtml]="siteTitle | safeHtml">
   </div>
   <div class="language">
     EN
     </div>
+  </div>
   <div class="linksContainer">
     <input type="checkbox" id="nav-check">
     <label for="nav-check">

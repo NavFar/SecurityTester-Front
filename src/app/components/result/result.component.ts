@@ -4,6 +4,13 @@ import { WebSocketService } from '../../services/web-socket/web-socket.service'
 import { PageContentService } from '../../services/page-content/page-content.service'
 import { ResultService } from '../../services/result/result.service'
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import { faDownload} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-result',
@@ -11,7 +18,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit,OnDestroy {
+  cross = faTimes;
+  check = faCheck;
+  dash = faMinus;
+  info = faInfoCircle;
+  download = faDownload;
   result:string;
+  testLabel:string;
   testOverviewTitle:string;
   qualityLevel:string;
   hostLabel:string;
@@ -31,12 +44,20 @@ export class ResultComponent implements OnInit,OnDestroy {
   pass:string;
   fail:string;
   testResult;
+  testDetails;
   passedTests:number;
   testsScore:number;
   notFound:string;
-  constructor(private toast:ToastrService,private resultService:ResultService,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
+  from:string;
+  tooWeak:string;
+  weak:string;
+  average:string;
+  good:string;
+  excellent:string;
+  passStatus:string;
+  recommendation:string;
+  constructor(private toast:ToastrService,private resultService:ResultService,private router:Router,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
   }
-
   ngOnInit() {
     this.passedTests=0;
     this.testsScore=0;
@@ -61,22 +82,32 @@ export class ResultComponent implements OnInit,OnDestroy {
         this.fail=res.fail;
         this.partTitle=res.partTitle;
         this.notFound=res.notFound;
+        this.from = res.from;
+        this.tooWeak = res.tooWeak;
+        this.weak = res.weak;
+        this.average = res.average;
+        this.good = res.good;
+        this.excellent = res.excellent;
+        this.passStatus = res.passStatus;
+        this.recommendation=res.recommendation;
+        this.testLabel=res.test;
+        this.result = res.result;
       },
       (err) =>{
         console.log("cant get values sorry");
       }
     );
     let id = this.activeRoute.snapshot.paramMap.get('id');
+
     this.resultService.getResult({id:id}).subscribe(
       (res)=>{
-        this.testResult = res;
+        this.testResult = res.request;
+        this.testDetails = res.scripts;
         this.updateScores();
-
       },
       (err)=>{
         if(err.status==404)
-        return this.toast.error(this.notFound);
-        console.log("cant get values sorry");
+        return console.log("cant get values sorry");
       }
     );
     this.websocket.serverSocket(id).subscribe(
@@ -103,7 +134,8 @@ export class ResultComponent implements OnInit,OnDestroy {
         countedTests++;
         sum+=Number(this.testResult.pendingOn[i].score);
         }
-      if(this.testResult.pendingOn[i].pass)
+        // console.log(this.testResult.pendingOn[i].result.pass)
+      if(this.testResult.pendingOn[i].result.pass)
         {
         this.passedTests++;
         }
@@ -113,5 +145,8 @@ export class ResultComponent implements OnInit,OnDestroy {
       this.testsScore=0;
     else
       this.testsScore=sum/countedTests;
+  }
+  return(){
+    this.router.navigate(['/home']);
   }
 }

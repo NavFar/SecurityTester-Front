@@ -13,12 +13,16 @@ export class UserComponent implements OnInit {
   username:string;
   constructor(private router:Router ,private adminApi:AdminApiService ,private toast :ToastrService ) {
     this.username="نام کاربر"
+    this.toast.info("درحال دریافت اطلاعات کاربر");
+
    }
 
   ngOnInit() {
     this.adminApi.getUsername().subscribe(
       (res)=>{
         this.username = res;
+        this.toast.success("اطلاعات کاربر دریافت شد");
+
       },
       (err)=>{
         this.toast.error("عدم برقراری ارتباط");

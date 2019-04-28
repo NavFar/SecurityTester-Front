@@ -1,2 +1,2 @@
-<div class="ql-editor container" [innerHtml]=aboutUs>
+<div *ngIf="aboutUs" class="ql-editor container" [innerHtml]="aboutUs | safeHtml">
 </div>

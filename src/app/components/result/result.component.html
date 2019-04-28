@@ -5,44 +5,66 @@
 </div>
 <div class="overviewContainer container">
   <div class="overal" *ngIf="testResult">
-    <div class="overalRow">{{hostLabel}} : <span>{{testResult?.url}}</span></div>
-    <div class="overalRow">{{testIdLabel}} : <span>{{testResult?._id}}</span></div>
-    <div class="overalRow">{{startTimeLabel}} : <span>{{testResult?.start| jalali | persianNumber}}</span></div>
-    <div class="overalRow">{{endTimeLabel}} : <span>{{testResult?.end | jalali | persianNumber}}</span></div>
-    <div class="overalRow">{{score}} : <span>{{testsScore| number:'1.0-2' | persianNumber}}</span></div>
-    <div class="overalRow">{{successfullTestsLabel }} : <span>{{passedTests| persianNumber}}</span></div>
+    <div class="overalRow">{{hostLabel}} : <span>{{testResult.url}}</span></div>
+    <div class="overalRow">{{testIdLabel}} : <span>{{testResult._id}}</span></div>
+    <div class="overalRow">{{startTimeLabel}} : <span>{{testResult.start| jalali | persianNumber}}</span></div>
+    <div class="overalRow">{{endTimeLabel}} : <span *ngIf="testResult.end">{{testResult.end | jalali | persianNumber}}</span></div>
+    <div class="overalRow">{{score}} : <span>{{testsScore| number:'1.0-2' | persianNumber}} {{from}} {{"20"| persianNumber}}</span></div>
+    <div class="overalRow">{{successfullTestsLabel }} : <span>{{passedTests| persianNumber}} {{from}} {{testResult.pendingOn.length | persianNumber}}</span></div>
   </div>
   <div class="colorIndicator">
-    <div class="indicator" [class.blue]="15 < testsScore "
-                           [class.green]=" testsScore < 15"
-                           [class.yellow]=" testsScore < 10"
-                           [class.red]="testsScore < 5"
-         >
-      <!-- {{qualityLevel}} -->
-      </div>
+      <div class="indicator green" *ngIf="18 <= testsScore; else lower18"> {{excellent}}</div>
+      <ng-template #lower18>
+        <div class="indicator blue" *ngIf=" 15<=testsScore && testsScore < 18; else lower15"> {{good}}</div>
+        <ng-template #lower15>
+          <div class="indicator yellow" *ngIf="10<=testsScore && testsScore < 15; else lower10"> {{average}}</div>
+          <ng-template #lower10>
+            <div class="indicator orange" *ngIf="5<=testsScore && testsScore < 10; else lower5"> {{weak}}</div>
+            <ng-template #lower5>
+              <div class="indicator red"> {{tooWeak}}</div>
+            </ng-template>
+          </ng-template>
+        </ng-template>
+      </ng-template>
   </div>
 </div>
-
   <div class="title">
     {{testScores}}
   </div>
   <div class="container">
     <table>
         <colgroup>
+      <col class="fullDescCol"/>
       <col class="describtionCol"/>
       <col class="scoreCol"/>
+      <col class="passStatusCol"/>
       <col class="testStatusCol"/>
       <col class="testTiltleCol"/>
         </colgroup>
     <tr>
+      <th class="fullDescData"></th>
       <th >{{describtion}}</th>
       <th >{{score}}</th>
+      <th >{{passStatus}}</th>
       <th >{{testStatus}}</th>
-     <th >{{testTiltle}}</th>
+      <th >{{testTiltle}}</th>
     </tr>
-    <tr  *ngFor="let test of testResult?.pendingOn">
-      <td>{{test.describtion}}</td>
+    <tr  *ngFor="let test of testResult?.pendingOn;let i = index">
+      <td class="fullDescData"><span class="tooltip">{{testDetails[i]?.fullDescribtion}}</span><fa-icon class="icon"  class="info" [icon]="info"></fa-icon></td>
+      <td>{{testDetails[i]?.shortDescribtion}}</td>
       <td>{{test.score||0 | number:'1.0-2' | persianNumber}}</td>
+      <ng-template [ngIf]="!test.result" [ngIfElse]="testDone">
+          <td><fa-icon class="icon"  [styles]="{ 'color': 'yellow'}" [icon]="dash"></fa-icon></td>
+      </ng-template>
+      <ng-template #testDone>
+        <ng-template [ngIf]="test.result.pass">
+              <td><fa-icon class="icon"  [styles]="{ 'color': 'green'}" [icon]="check"></fa-icon></td>
+        </ng-template>
+            <ng-template [ngIf]="!test.result.pass">
+              <td><fa-icon class="icon"  [styles]="{ 'color': 'red'}" [icon]="cross"></fa-icon></td>
+      </ng-template>
+      </ng-template>
+
       <td *ngIf="test.status==-1" class="error">{{error}}</td>
       <td *ngIf="test.status==0" class="pending">{{pending}}</td>
       <td *ngIf="test.status==1" class="finished">{{finished}}</td>
@@ -50,25 +72,29 @@
     </tr>
     </table>
   </div>
-    <div *ngFor="let test of testResult?.pendingOn">
+    <div *ngFor="let test of testResult?.pendingOn;let i=index">
+      <div *ngIf="test.status==1">
       <div class="title">
-      {{test.name}}
+      {{test.name}} {{result}} {{testLabel}}
     </div>
     <div class="container">
       <table>
           <colgroup>
+            <col class="fullDescCol"/>
             <col class="describtionCol"/>
             <col class="scoreCol"/>
             <col class="testPass"/>
             <col class="testTiltleCol"/>
           </colgroup>
           <tr>
+          <th class="fullDescData"></th>
           <th >{{describtion}}</th>
           <th >{{score }}</th>
           <th >{{testStatus}}</th>
          <th >{{partTitle}}</th>
       </tr>
-      <tr  *ngFor="let part of test.result?.parts">
+      <tr  *ngFor="let part of test.result?.parts;let j=index;">
+        <td class="fullDescData"> <span class="tooltip">{{testDetails[i]?.parts[j]?.describtion}}</span><fa-icon class="icon"  class="info" [icon]="info"></fa-icon></td>
         <td>{{part.desc}}</td>
         <td>{{part.score | number:'1.0-2'| persianNumber}}</td>
         <td *ngIf="part.pass" class="finished">{{pass}}</td>
@@ -77,7 +103,34 @@
       </tr>
       </table>
     </div>
-</div>
+  </div>
 </div>
 
-<!-- {{result}} -->
+
+<div *ngFor="let test of testResult?.pendingOn;let i=index">
+  <div *ngIf="test.status==1">
+  <div class="title recommendation">
+    {{test.name}} {{recommendation}} {{testLabel}}
+</div>
+<div class="container recommendationContainer">
+  <table>
+      <colgroup>
+        <col class="downloadCol"/>
+        <col class="recommendationCol"/>
+        <col class="testTiltleCol"/>
+      </colgroup>
+      <tr>
+      <th class=""></th>
+      <th >{{recommendation}}</th>
+     <th >{{partTitle}}</th>
+  </tr>
+  <tr  *ngFor="let part of test.result?.parts;let j=index;">
+    <td class=""><a [href]="testDetails[i]?.parts[j]?.link"><fa-icon class="icon"  class="info" [icon]="download"></fa-icon></a></td>
+    <td>{{testDetails[i]?.parts[j]?.recommendation}}</td>
+    <td>{{testDetails[i]?.parts[j]?.name}}</td>
+  </tr>
+  </table>
+</div>
+</div>
+</div>
+</div>

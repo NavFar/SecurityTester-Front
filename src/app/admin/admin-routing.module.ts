@@ -15,7 +15,9 @@ import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-
 import { AboutUsEditComponent } from './components/about-us-edit/about-us-edit.component';
 import { FootnoteEditComponent } from './components/footnote-edit/footnote-edit.component';
 import { CopyrightEditComponent } from './components/copyright-edit/copyright-edit.component';
-
+import { AllResultsComponent } from './components/all-results/all-results.component';
+import { FaqListComponent } from './components/faq-list/faq-list.component';
+import { FaqEditComponent } from './components/faq-edit/faq-edit.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminBaseComponent,children:[
@@ -30,7 +32,11 @@ const routes: Routes = [
     { path: 'footnoteEdit', component: FootnoteEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'copyrightEdit', component: CopyrightEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'siteOptionsDashboard', component: SiteOptionsDashboardComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'faqList', component: FaqListComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'faqEdit/:id', component: FaqEditComponent, pathMatch: 'full', outlet:'adminRouter' },
     { path: 'reportsDashboard', component: ReportsOptionsComponent, pathMatch: 'full', outlet:'adminRouter' },
+    { path: 'allResults', component: AllResultsComponent, pathMatch: 'full', outlet:'adminRouter' },
+
   ], canActivate:[AuthGuardService]},
 
 ];

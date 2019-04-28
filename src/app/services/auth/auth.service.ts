@@ -11,9 +11,15 @@ export class AuthService {
    }
    public isAuthenticated():boolean{
      const token=localStorage.getItem('token');
-     return !this.jwtHelper.isTokenExpired(token);
+     try{
+       return !this.jwtHelper.isTokenExpired(token);
+     }
+     catch(e)
+     {
+       return false;
+     }
    }
    public login(username,password,recaptcha){
-     return this.http.post<any>("/api/admin/login/",{username:username , password:password , recaptcha : recaptcha});
+     return this.http.post<any>("/api/admin/user/login/",{username:username , password:password , recaptcha : recaptcha});
    }
 }

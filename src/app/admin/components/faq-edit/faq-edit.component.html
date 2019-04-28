@@ -1,0 +1,32 @@
+<div class="title">
+  ویرایش سوال
+</div>
+
+<div class="box">
+  <div>
+    <label for="title">عنوان</label>
+    <input type="text" name="title" [(ngModel)]="title"  class="titleInput">
+  </div>
+</div>
+  <div class="box">
+    <div class="editorStyle">
+  سوال:
+<quill-editor [(ngModel)]="question"  [style]="{height: '40vh'}"></quill-editor>
+</div>
+</div>
+
+  <div class="box">
+    <div class="editorStyle">
+
+  پاسخ:
+<quill-editor [(ngModel)]="answer"  [style]="{height: '40vh'}"></quill-editor>
+</div>
+</div>
+<div class="buttons">
+<button (click)="submit()" class="submitButton">
+  اعمال
+</button>
+<button *ngIf="!new" (click)="delete()" class="submitButton deleteButton">
+حذف
+</button>
+</div>

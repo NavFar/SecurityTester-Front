@@ -4,13 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RecaptchaModule ,RECAPTCHA_LANGUAGE ,RecaptchaSettings ,RECAPTCHA_SETTINGS } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { JalaliPipe } from './pipes/jalali/jalali.pipe';
+import { SharedModule } from './shared.module';
 
-// import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,7 +21,7 @@ import { MotoComponent } from './components/moto/moto.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
 import { RecentResultsComponent } from './components/recent-results/recent-results.component';
-import { PersianNumberPipe } from './pipes/persian-number/persian-number.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -43,9 +40,7 @@ export function tokenGetter() {
     QuestionComponent,
     ResultComponent,
     RecentResultsComponent,
-    JalaliPipe,
-    PersianNumberPipe,
-
+    SafeHtmlPipe,
   ],
   imports: [
     BrowserModule,
@@ -54,11 +49,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-    FontAwesomeModule,
-    ToastrModule.forRoot({
-        positionClass: 'toast-top-center',
-      }
-    ),
+    SharedModule,
     AppRoutingModule,
     JwtModule.forRoot({
       config: {
@@ -66,7 +57,6 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:3000'],
       }
     }),
-    // AdminModule
   ],
   providers: [
     {

@@ -12,14 +12,18 @@ export class ContactUsEditComponent implements OnInit {
   contactUsEdit:string;
   submitButton:string;
   notShowContactUs:string;
-  location:string;
+  locationLat:string;
+  locationLng:string;
+  lng:string;
+  lat:string;
   content:string;
   show:boolean;
   constructor(private adminApi:AdminApiService ,private toast :ToastrService ) {
     this.contactUsEdit="ویرایش متن تماس با ما";
     this.submitButton = "اعمال تغییرات";
     this.notShowContactUs="عدم نمایش متن تماس با ما";
-    this.location="موقعیت روی نقشه"
+    this.locationLat="عرض جغرافیایی";
+    this.locationLng="طول جغرافیایی";
     this.content="";
     this.show=false;
     this.toast.info("در حال دریافت اطلاعات");
@@ -28,8 +32,11 @@ export class ContactUsEditComponent implements OnInit {
     this.adminApi.getContactUs().subscribe(
       (res)=>{
         this.toast.success("اطلاعات دریافت شد");
+        console.log(res)
         this.show=!res.show;
         this.content=res.content;
+        this.lng = res.lng;
+        this.lat = res.lat;
       },
       (err)=>{
         this.toast.error("عدم برقراری ارتباط");
@@ -38,7 +45,7 @@ export class ContactUsEditComponent implements OnInit {
   }
   submit(){
     this.toast.info("در حال ثبت داده");
-    this.adminApi.setContactUs({contactUs:{show:!this.show,content:this.content}}).subscribe(
+    this.adminApi.setContactUs({contactUs:{show:!this.show,content:this.content,lng:this.lng,lat:this.lat}}).subscribe(
       (res)=>{
         this.toast.success("اطلاعات ثبت شد");
       },

@@ -1,0 +1,23 @@
+<div class="overalContainer">
+  <div class="addButton">
+    <button (click)="new()">افزودن</button>
+  </div>
+
+<div class="title">
+همه‌ی سوالات
+</div>
+<div class="container">
+  <table>
+      <colgroup>
+        <col class="subjectCol"/>
+
+      </colgroup>
+      <tr>
+        <th>عنوان سوال</th>
+  </tr>
+  <tr  class="data"  *ngFor="let faq of faqs" (click)="click(faq._id)">
+    <td>{{faq.title}}</td>
+  </tr>
+  </table>
+</div>
+</div>

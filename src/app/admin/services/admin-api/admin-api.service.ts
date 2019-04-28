@@ -9,8 +9,26 @@ import { throwError } from 'rxjs';
 export class AdminApiService {
 
   constructor(private http: HttpClient) { }
+  deleteFaq(id){
+    return this.http.post<any>("/api/admin/siteData/deleteFaq/",id);
+  }
+  getFaq(id){
+    return this.http.post<any>("/api/admin/siteData/getFaq/",id);
+  }
+  addFaq(faq){
+    return this.http.post<any>("/api/admin/siteData/addFaq/",faq);
+  }
+  getAllFaqs(){
+    return this.http.post<any>("/api/admin/siteData/getAllFaqs",null);
+  }
+  getResultsCount(){
+    return this.http.post<any>("/api/admin/result/count",null);
+  }
+  getAllResults(offset,limit){
+    return this.http.post<any>("/api/admin/result/all",{offset:offset,limit:limit});
+  }
   getUsername(){
-      return this.http.post<any>("/api/admin/username/",null);
+      return this.http.post<any>("/api/admin/user/username/",null);
   }
   getMoto(){
       return this.http.post<any>("/api/admin/siteData/getMoto/",null);

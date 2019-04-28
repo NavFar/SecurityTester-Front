@@ -24,5 +24,26 @@ input, textarea {
 }
 .baseFontColor::placeholder{
   color: #2e80a8;
-
+}
+::placeholder{
+  opacity: 0.4!important;
+}
+a,button ,label {
+  cursor: pointer!important;
+}
+button:disabled{
+  cursor:not-allowed!important;
+}
+button:hover{
+  box-shadow: 2px 3px #888888;;
+}
+button:hover:disabled{
+  box-shadow: none;
+}
+td{
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }

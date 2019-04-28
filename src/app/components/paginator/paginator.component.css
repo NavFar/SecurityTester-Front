@@ -1,0 +1,26 @@
+.paginatorContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border:2px solid black;
+  border-radius: 5px;
+}
+.pageNumber{
+  cursor: pointer;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 2vh;
+}
+.currentPage{
+    color: blue;
+}
+.pageNumber:hover{
+  text-decoration: underline;
+  background-color: gray;
+}

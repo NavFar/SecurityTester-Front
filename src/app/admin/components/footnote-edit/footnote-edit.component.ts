@@ -20,6 +20,8 @@ export class FootnoteEditComponent implements OnInit {
     this.notShowFootnote="عدم نمایش متن زیرنویس";
     this.content="";
     this.show=false;
+    this.toast.info("در حال دریافت اطلاعات");
+
    }
    ngOnInit() {
      this.adminApi.getFooter().subscribe(

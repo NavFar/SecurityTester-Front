@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { QuillModule } from 'ngx-quill';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { TreeModule } from 'angular-tree-component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { SharedModule } from '../shared.module';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminBaseComponent } from './components/admin-base/admin-base.component';
@@ -22,6 +21,9 @@ import { ContactUsEditComponent } from './components/contact-us-edit/contact-us-
 import { AboutUsEditComponent } from './components/about-us-edit/about-us-edit.component';
 import { FootnoteEditComponent } from './components/footnote-edit/footnote-edit.component';
 import { UserComponent } from './components/user/user.component';
+import { AllResultsComponent } from './components/all-results/all-results.component';
+import { FaqListComponent } from './components/faq-list/faq-list.component';
+import { FaqEditComponent } from './components/faq-edit/faq-edit.component';
 
 
 
@@ -43,14 +45,30 @@ import { UserComponent } from './components/user/user.component';
     AboutUsEditComponent,
     FootnoteEditComponent,
     UserComponent,
+    AllResultsComponent,
+    FaqListComponent,
+    FaqEditComponent,
 
   ],
   imports: [
-    CommonModule,
     FormsModule,
     AdminRoutingModule,
-    FontAwesomeModule,
+    SharedModule,
     QuillModule,
+    // QuillModule.forRoot({
+        // modules: {
+          // toolbar:
+          // [
+              // [{ 'size': [false, '10', '16', '22', '36', '48', '72', '144'] }]
+              // [{ 'size': [false, '10', '16', '22', '36', '48', '72', '144'] }],
+              // ['bold', 'italic', 'underline', 'strike'],
+              // [{ 'color': [] }, { 'background': [] }],
+              // [{ 'align': [false, 'center', 'right', 'justify'] }],
+              // [{ 'indent': '-1' }, { 'indent': '+1' }],
+              // [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          // ]
+        // }
+      // }),
     TreeModule.forRoot(),
   ]
 })
