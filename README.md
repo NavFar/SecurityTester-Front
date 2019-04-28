@@ -14,7 +14,7 @@ For add more component to app first you should determine that the component is a
 | app   | src/app           |  src/app/app/app.module.ts     | src/app/app/app-routing.module.ts     |
 
 
-|              | Centered | Right Aligned | Left Aligned | Centered | Right Aligned |
-| :----------- | :------: | ------------: | :----------- | :------: | ------------: |
+|              | component location | config location | route location |
+| :-----------: | :------: | :------------: | :-----------: |
 | admin | src/app/admin     |  src/app/admin/admin.module.ts | src/app/admin/admin-routing.module.ts |
 | app   | src/app           |  src/app/app/app.module.ts     | src/app/app/app-routing.module.ts     |
