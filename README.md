@@ -12,3 +12,9 @@ For add more component to app first you should determine that the component is a
 | :----: | :-----------------: | :----------------: | :--------------: |
 | `admin` | `src/app/admin` | `src/app/admin/admin.module.ts` | `src/app/admin/admin-routing.module.ts` |
 | `app`   | `src/app`       | `src/app/app/app.module.ts` | `src/app/app/app-routing.module.ts` |
+
+
+| Left Aligned | Centered | Right Aligned | Left Aligned | Centered | Right Aligned |
+| :----------- | :------: | ------------: | :----------- | :------: | ------------: |
+| Cell 1       | Cell 2   | Cell 3        | Cell 4       | Cell 5   | Cell 6        |
+| Cell 7       | Cell 8   | Cell 9        | Cell 10      | Cell 11  | Cell 12       |
