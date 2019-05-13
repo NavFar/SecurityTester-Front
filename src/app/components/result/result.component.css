@@ -61,6 +61,9 @@
 .red{
   background-color: #ff0000;
 }
+.darkBlue{
+  background-color: #5a9bd5;
+}
 .overalRow{
   direction: rtl;
   padding-top: 1vh;
@@ -174,6 +177,27 @@ a{
   text-decoration: none;
   color: black;
 }
+.botButtomContainer{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttonRow{
+  /* display:inline-block; */
+}
+.inline{
+  display:inline;
+}
+.botButtomContainer button{
+  padding: 6px 4px 6px 4px ;
+  border-radius: 10px ;
+  width: 80%;
+  margin-top:1vh;
+  color: white;
+  font-weight: bolder;
+  margin-right: 5%;
+}
+
 @media only screen and (max-width: 780px) {
 
 .scoreCol{

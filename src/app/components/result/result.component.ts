@@ -6,11 +6,7 @@ import { ResultService } from '../../services/result/result.service'
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
-import { faInfoCircle} from '@fortawesome/free-solid-svg-icons';
-import { faDownload} from '@fortawesome/free-solid-svg-icons';
+import { faTimes,faCheck,faMinus,faInfoCircle,faDownload,faRedo,faPrint } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-result',
@@ -22,7 +18,9 @@ export class ResultComponent implements OnInit,OnDestroy {
   check = faCheck;
   dash = faMinus;
   info = faInfoCircle;
+  redo = faRedo;
   download = faDownload;
+  print = faPrint;
   result:string;
   testLabel:string;
   testOverviewTitle:string;
@@ -56,6 +54,9 @@ export class ResultComponent implements OnInit,OnDestroy {
   excellent:string;
   passStatus:string;
   recommendation:string;
+  testAgain:string;
+  printDescDoc:string;
+  watchSecDoc:string;
   constructor(private toast:ToastrService,private resultService:ResultService,private router:Router,private activeRoute: ActivatedRoute,private websocket:WebSocketService,private pageContentService : PageContentService ) {
   }
   ngOnInit() {
@@ -92,6 +93,9 @@ export class ResultComponent implements OnInit,OnDestroy {
         this.recommendation=res.recommendation;
         this.testLabel=res.test;
         this.result = res.result;
+        this.watchSecDoc= res.watchSecDoc;
+        this.printDescDoc= res.printDescDoc;
+        this.testAgain= res.testAgain;
       },
       (err) =>{
         console.log("cant get values sorry");
