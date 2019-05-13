@@ -7,18 +7,18 @@
     EN
     </div>
   </div>
-  <div class="linksContainer">
-    <input type="checkbox" id="nav-check">
-    <label for="nav-check">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-  <div class="linksAcardion">
+  <div class="linksContainer" >
+    <div tabindex="-1"  id="nav-check"  (click)="click()" (blur)="onBlur()" >
+    <!-- <label for="nav-check" > -->
+    <div [class.firstDiv]="toggle"><span></span></div>
+    <div [class.secondDiv]="toggle"><span></span></div>
+    <div [class.thirdDiv]="toggle"><span></span></div>
+    </div>
+  <!-- </label> -->
+  <div class="linksAcardion" [class.linksAaaa]="toggle">
     <a class="links" *ngFor="let link of links" [routerLink]="link.link" [routerLinkActive]="['activeLink']">
       {{link.name}}
     </a>
   </div>
 </div>
-
 </div>

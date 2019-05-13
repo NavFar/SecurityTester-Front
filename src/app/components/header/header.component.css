@@ -18,10 +18,11 @@
 }
 .logo{
   float:left;
-  height: 14vh !important;
+  height: 14vw !important;
   margin-top: -3.5vh;
   margin-left: 10px;
-  width: 14vh;
+  width: 14vh!important;
+  height: 14vh!important;
   border :2px solid black;
   border-radius: 50%;
   object-fit: cover;
@@ -41,11 +42,8 @@
 .linksContainer{
   position: absolute;
   bottom: 0;
-  /* overflow: auto; */
   right: 1px;
   direction: rtl;
-  width:100%;
-  width:calc(100% - 14vh);
 }
 .links{
   color:#5a9bd5;
@@ -68,7 +66,10 @@
   background-color: #bfc0c1;
 }
 input{
-  display: none;
+  /* display: none; */
+  width: 0;
+  height: 0;
+  position: absolute;
 }
 span{
 margin-right: 15px;
@@ -81,6 +82,22 @@ border-top: 2px solid #eee;
   overflow-y: auto;
   z-index: 1000;
   transition: all 0.5s ease-in;
+
+}
+#nav-check div{
+  transition: 0.4s;
+
+}
+.firstDiv{
+  -webkit-transform: rotate(45deg) translate(4px,15px);
+  transform: rotate(45deg) translate(4px, 15px);
+}
+.secondDiv{
+  opacity: 0;
+}
+.thirdDiv{
+  -webkit-transform: rotate(-45deg) translate(15px,-15px);
+  transform: rotate(-45deg) translate(15px, -15px);
 }
 /* /////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 780px) {
@@ -96,10 +113,12 @@ border-top: 2px solid #eee;
       height: 0;
       width:99vw;
     }
-  #nav-check:checked ~ .linksAcardion{
+  /* #nav-check:focus ~ .linksAcardion{ */
+  .linksAaaa{
     height: 100vh;
     overflow-y: auto;
   }
+
   .links{
     display: block;
     background-color: #dee0e2;
@@ -117,5 +136,7 @@ border-top: 2px solid #eee;
   .links{
 
   }
-
+  .linksContainer{
+    width:85%;
+  }
 }

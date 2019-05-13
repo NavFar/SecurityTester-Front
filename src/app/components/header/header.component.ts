@@ -11,7 +11,9 @@ export class HeaderComponent implements OnInit {
   links:any[];
   destination:any;
   logo:any;
+  toggle:boolean;
   constructor(private pageContentService : PageContentService) {
+    this.toggle = false;
     this.siteTitle = "";
     this.links=[
       {name:"",link:"home"},
@@ -45,5 +47,10 @@ export class HeaderComponent implements OnInit {
        }
      );
    }
-
+   onBlur(){
+     this.toggle = false;
+   }
+   click(){
+     this.toggle = !this.toggle;
+   }
 }
