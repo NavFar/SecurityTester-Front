@@ -113,7 +113,12 @@ export class UploaderComponent implements OnInit {
         }
       }
       ,(err)=>{
-        this.toast.error("فایل با نام تکراری");
+        if(err.status==400)
+          this.toast.error("فایل با نام تکراری");
+        else if(err.status==403)
+          this.toast.error("فایل با پسوند غیرمجاز");
+        else
+          this.toast.error("خطا در ارتباط با سرور");
       }
     );
   }
