@@ -9,6 +9,7 @@ import { throwError } from 'rxjs';
 export class AdminApiService {
 
   constructor(private http: HttpClient) { }
+
   deleteFaq(id){
     return this.http.post<any>("/api/admin/siteData/deleteFaq/",id);
   }
@@ -29,6 +30,9 @@ export class AdminApiService {
   }
   getUsername(){
       return this.http.post<any>("/api/admin/user/username/",null);
+  }
+  logout(){
+    return this.http.post<any>("/api/admin/user/logout/",null);
   }
   getMoto(){
       return this.http.post<any>("/api/admin/siteData/getMoto/",null);

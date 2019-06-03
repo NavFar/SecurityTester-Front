@@ -30,7 +30,14 @@ export class UserComponent implements OnInit {
     );
   }
   exit(){
-    localStorage.setItem('token', "");
-    this.router.navigate(['login'])
-  }
+    this.adminApi.logout().subscribe(
+      (res)=>{
+        localStorage.setItem('token', "");
+        this.router.navigate(['login'])
+      },
+      (err)=>{
+        this.toast.error("عدم برقراری ارتباط");
+      }
+    );
+    }
 }
